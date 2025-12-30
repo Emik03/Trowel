@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <FileVersion>0.1</FileVersion>
+        <NoWarn>$(NoWarn);NU1903</NoWarn>
+        <TargetFramework>net6.0</TargetFramework>
+        <IsPlantsVsZombiesFusion>true</IsPlantsVsZombiesFusion>
+        <Description>Adds keyboard and mouse bindings for seed slots in Plants vs Zombies: Fusion.</Description>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="$(Morsels)/Compile/Source/References/**/*.cs"/>
+        <Compile Include="$(Morsels)/Compile/Source/References/System/Diagnostics/Attributes.cs" Link="Source/References/System/Diagnostics/Attributes.cs"/>
+    </ItemGroup>
+</Project>
