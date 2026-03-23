@@ -34,12 +34,12 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fc400/50/b569c85d/ConfusedByAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fc400/90/5d8baa0f/Plugin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6350b88845c442acaceb704ff3cc91b64a3e00/72/d8341766/List`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/08/7487fcbe/TravelDebuff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/08/7487fcbe/TravelDebuff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/33/a3e38171/InvestBuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/92/bac0a3eb/UltiBuff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/b4/528b64bb/AdvBuff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/92/bac0a3eb/UltiBuff.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/b4/528b64bb/AdvBuff.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/d0/aa1c91ef/PlantType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/fe/d4c70630/TravelUnlocks.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/fe/d4c70630/TravelUnlocks.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73a0fcca88544a27ae8eedab855c1ce43e8200/6f/8e765101/TravelAdvanture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8c5acd57f2b44c56b3a670b184849847484800/0d/4d971792/List`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8c5acd57f2b44c56b3a670b184849847484800/95/b2861f41/Unsafe.cs" root0="FORCE_HIGHLIGHTING" />
@@ -115,6 +115,7 @@
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/System/Diagnostics/Attributes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/System/SpanHelpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/LevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/TravelSpans.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TrowelMod.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{

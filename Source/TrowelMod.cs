@@ -297,6 +297,9 @@ public sealed class TrowelMod : MelonMod
                 };
         }
 
+        if (GameAPP.theGameStatus is not GameStatus.InGame and not GameStatus.Pause)
+            return;
+
         const float DrainSpeed = 4;
 
         if (!TravelLookMenu.Instance && Array.Exists(Odyssey.Value, Input.GetKeyDown))
