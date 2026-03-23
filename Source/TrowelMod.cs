@@ -21,6 +21,8 @@ using static core::UnityEngine.KeyCode;
 [CLSCompliant(false)]
 public sealed class TrowelMod : MelonMod
 {
+    delegate void ActionSpan(scoped Span<int> x, scoped Span<int> y);
+
     bool? _forceOdyssey;
 
     float _gloveFlash;
@@ -55,15 +57,7 @@ public sealed class TrowelMod : MelonMod
 
     MelonPreferences_Entry<int> MinimalSeedDurability { get; set; } = null!;
 
-    MelonPreferences_Entry<bool[]> OdysseyAdvancedUpgrades { get; set; } = null!;
-
-    MelonPreferences_Entry<bool[]> OdysseyDebuff { get; set; } = null!;
-
-    MelonPreferences_Entry<bool[]> OdysseyUnlockPlant { get; set; } = null!;
-
-    MelonPreferences_Entry<int[]> OdysseyUltimateUpgrades { get; set; } = null!;
-
-    MelonPreferences_Entry<int[]> OdysseyAdvancedUnlockRound { get; set; } = null!;
+    MelonPreferences_Entry<int[]?[]> OdysseyData { get; set; } = null!;
 
     MelonPreferences_Entry<KeyCode[]> Cancel { get; set; } = null!;
 
@@ -82,37 +76,25 @@ public sealed class TrowelMod : MelonMod
         var category = MelonPreferences.CreateCategory(nameof(Trowel));
 
         AllowResolutionChanges = category.CreateEntry(nameof(AllowResolutionChanges), true);
-
         AlwaysSafe = category.CreateEntry(nameof(AlwaysSafe), false);
         ColorSlots = category.CreateEntry(nameof(ColorSlots), true);
         EnableMouseScroll = category.CreateEntry(nameof(EnableMouseScroll), true);
         InvertMouseScroll = category.CreateEntry(nameof(InvertMouseScroll), false);
         MinimalSeedDurability = category.CreateEntry(nameof(MinimalSeedDurability), 0);
 
-        OdysseyDebuff = category.CreateEntry<bool[]>(nameof(OdysseyDebuff), []);
-        OdysseyUnlockPlant = category.CreateEntry<bool[]>(nameof(OdysseyUnlockPlant), []);
-        OdysseyAdvancedUpgrades = category.CreateEntry<bool[]>(nameof(OdysseyAdvancedUpgrades), []);
-        OdysseyUltimateUpgrades = category.CreateEntry<int[]>(nameof(OdysseyUltimateUpgrades), []);
-        OdysseyAdvancedUnlockRound = category.CreateEntry<int[]>(nameof(OdysseyAdvancedUnlockRound), []);
-
         Odyssey = category.CreateEntry<KeyCode[]>(nameof(Odyssey), [O]);
         Cancel = category.CreateEntry<KeyCode[]>(nameof(Cancel), [Alpha5]);
         Shift = category.CreateEntry<KeyCode[][]>(nameof(Shift), [[LeftControl, LeftShift, Tab]]);
         Slots = category.CreateEntry<KeyCode[][]>(nameof(Slots), [[A], [S], [D], [F], [Z], [X], [C]]);
+        OdysseyData = category.CreateEntry<int[]?[]>(nameof(OdysseyData), []);
 
-        OnPutDownItem += AcknowledgeItemWasPutDown;
+        Type[] allowMethodTypes = [typeof(int), typeof(int), typeof(bool)];
         var putDownItemMethod = typeof(Mouse).GetMethod(nameof(Mouse.PutDownItem), Flags, null, [], null);
-
-        var allowMethod = typeof(Screen).GetMethod(
-            nameof(Screen.SetResolution),
-            Flags,
-            null,
-            [typeof(int), typeof(int), typeof(bool)],
-            null
-        );
-
+        var allowMethod = typeof(Screen).GetMethod(nameof(Screen.SetResolution), Flags, null, allowMethodTypes, null);
         HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)PutDownItem).Method));
         HarmonyInstance.Patch(allowMethod, new(((Delegate)AllowResolutionToChange).Method));
+
+        OnPutDownItem += AcknowledgeItemWasPutDown;
     }
 
     void AcknowledgeItemWasPutDown() => IsBuffering = false;
@@ -144,24 +126,6 @@ public sealed class TrowelMod : MelonMod
 
         if (IsBuffering)
             SelectBufferedCard(mouse, cards);
-    }
-
-    // ReSharper disable SuggestBaseTypeForParameter
-    static void ReadPreferences<T>(MelonPreferences_Entry<T[]> entry, Il2CppStructArray<T> list)
-        where T : unmanaged
-    {
-        for (int i = 0, length = Math.Min(entry.Value.Length, list.Count); i < length; i++)
-            list[i] = entry.Value[i];
-    }
-
-    static void WritePreferences<T>(MelonPreferences_Entry<T[]> entry, Il2CppStructArray<T> list)
-        where T : unmanaged
-    {
-        if (entry.Value.Length < list.Count)
-            entry.Value = new T[list.Count];
-
-        for (var i = 0; i < list.Count; i++)
-            entry.Value[i] = list[i];
     }
 
     static bool AllowResolutionToChange(int width, int height, bool fullscreen) =>
@@ -354,8 +318,7 @@ public sealed class TrowelMod : MelonMod
         if (Board.Instance is var board && !board)
             return;
 
-        if (!board.isIZ)
-            board.isEveStarted = forceOdyssey && Disabled;
+        board.isEveStarted = forceOdyssey && Disabled;
 
         board.boardTag = board.boardTag with
         {
@@ -368,32 +331,41 @@ public sealed class TrowelMod : MelonMod
             Object.Destroy(travel);
     }
 
-    TravelMgr? GetOrAddTravel()
+    TravelMgr ForEach(TravelMgr travel, ActionSpan action)
     {
-        TravelMgr Read(TravelMgr travel)
+        TravelSpans data = new(travel.data);
+
+        if (OdysseyData.Value.Length < TravelSpans.Length)
         {
-            ReadPreferences(OdysseyDebuff, travel.debuff);
-            ReadPreferences(OdysseyUnlockPlant, travel.unlockPlant);
-            ReadPreferences(OdysseyAdvancedUpgrades, travel.advancedUpgrades);
-            ReadPreferences(OdysseyUltimateUpgrades, travel.ultimateUpgrades);
-            return travel;
+            var e = OdysseyData.Value;
+            Array.Resize(ref e, TravelSpans.Length);
+            OdysseyData.Value = e;
         }
 
-        if (TravelMgr.Instance is var travel && !travel)
-            return _forceOdyssey is true && GameAPP.Instance is var game && game
-                ? Read(game.gameObject.AddComponent<TravelMgr>())
-                : null;
+        for (var i = 0; i < TravelSpans.Length && (OdysseyData.Value[i] ??= []) is var x && data[i] is var y; i++)
+        {
+            if (x.Length < y.Length)
+                Array.Resize(ref x, y.Length);
 
-        if (!TravelLookMenu.Instance)
-            return Read(travel);
+            action(x.AsSpan(Math.Min(x.Length, y.Length)), y);
+            OdysseyData.Value[i] = x;
+        }
 
-        if (!Array.Exists(Odyssey.Value, Input.GetKeyDown))
-            return travel;
-
-        WritePreferences(OdysseyDebuff, travel.debuff);
-        WritePreferences(OdysseyUnlockPlant, travel.unlockPlant);
-        WritePreferences(OdysseyAdvancedUpgrades, travel.advancedUpgrades);
-        WritePreferences(OdysseyUltimateUpgrades, travel.ultimateUpgrades);
         return travel;
+    }
+
+    TravelMgr? GetOrAddTravel()
+    {
+        if (TravelMgr.Instance is var travel && travel)
+            return TravelLookMenu.Instance
+                ? Array.Exists(Odyssey.Value, Input.GetKeyDown) ? ForEach(travel, (x, y) => y[..x.Length].CopyTo(x)) : travel
+                : ForEach(travel, (x, y) => x.CopyTo(y));
+
+        return _forceOdyssey is true &&
+            GameAPP.Instance is var game &&
+            game &&
+            game.gameObject.AddComponent<TravelMgr>() is var newTravel
+                ? ForEach(newTravel, (x, y) => x.CopyTo(y))
+                : null;
     }
 }

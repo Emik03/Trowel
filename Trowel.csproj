@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <FileVersion>0.1</FileVersion>
+        <FileVersion>3.5</FileVersion>
         <NoWarn>$(NoWarn);NU1903</NoWarn>
         <TargetFramework>net6.0</TargetFramework>
         <IsPlantsVsZombiesFusion>true</IsPlantsVsZombiesFusion>
