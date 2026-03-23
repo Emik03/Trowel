@@ -297,10 +297,10 @@ public sealed class TrowelMod : MelonMod
                 };
         }
 
+        const float DrainSpeed = 4;
+
         if (GameAPP.theGameStatus is not GameStatus.InGame and not GameStatus.Pause)
             return;
-
-        const float DrainSpeed = 4;
 
         if (!TravelLookMenu.Instance && Array.Exists(Odyssey.Value, Input.GetKeyDown))
             (_forceOdyssey, _gloveFlash) = (_forceOdyssey switch
@@ -350,7 +350,7 @@ public sealed class TrowelMod : MelonMod
             if (x.Length < y.Length)
                 Array.Resize(ref x, y.Length);
 
-            action(x.AsSpan(Math.Min(x.Length, y.Length)), y);
+            action(x.AsSpan(0, Math.Min(x.Length, y.Length)), y);
             OdysseyData.Value[i] = x;
         }
 
@@ -361,7 +361,7 @@ public sealed class TrowelMod : MelonMod
     {
         if (TravelMgr.Instance is var travel && travel)
             return TravelLookMenu.Instance
-                ? Array.Exists(Odyssey.Value, Input.GetKeyDown) ? ForEach(travel, (x, y) => y[..x.Length].CopyTo(x)) : travel
+                ? Array.Exists(Odyssey.Value, Input.GetKeyDown) ? ForEach(travel, (x, y) => y.CopyTo(x)) : travel
                 : ForEach(travel, (x, y) => x.CopyTo(y));
 
         return _forceOdyssey is true &&
