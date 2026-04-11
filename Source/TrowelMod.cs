@@ -23,6 +23,8 @@ public sealed class TrowelMod : MelonMod
 {
     delegate void ActionSpan(scoped Span<int> x, scoped Span<int> y);
 
+    bool _updating;
+
     bool? _forceOdyssey;
 
     float _gloveFlash;
@@ -30,11 +32,11 @@ public sealed class TrowelMod : MelonMod
     int _last;
 
     /// <summary>Invoked when <see cref="Mouse.PutDownItem"/> is called.</summary>
-    public static event Action? OnPutDownItem;
+    public static event Action OnPutDownItem = () => { };
 
     static bool Disabled => GameAPP.theGameStatus is not GameStatus.InGame;
 
-    bool IsBuffering
+    bool Buffering
     {
         get =>
             field &&
@@ -55,6 +57,8 @@ public sealed class TrowelMod : MelonMod
 
     MelonPreferences_Entry<bool> InvertMouseScroll { get; set; } = null!;
 
+    MelonPreferences_Entry<bool> WrapSeeds { get; set; } = null!;
+
     MelonPreferences_Entry<int> MinimalSeedDurability { get; set; } = null!;
 
     MelonPreferences_Entry<int[]?[]> OdysseyData { get; set; } = null!;
@@ -63,9 +67,9 @@ public sealed class TrowelMod : MelonMod
 
     MelonPreferences_Entry<KeyCode[]> Odyssey { get; set; } = null!;
 
-    MelonPreferences_Entry<KeyCode[][]> Slots { get; set; } = null!;
-
     MelonPreferences_Entry<KeyCode[][]> Shift { get; set; } = null!;
+
+    MelonPreferences_Entry<KeyCode[][]> Slots { get; set; } = null!;
 
     /// <inheritdoc />
     // ReSharper restore NullableWarningSuppressionIsUsed
@@ -81,23 +85,24 @@ public sealed class TrowelMod : MelonMod
         EnableMouseScroll = category.CreateEntry(nameof(EnableMouseScroll), true);
         InvertMouseScroll = category.CreateEntry(nameof(InvertMouseScroll), false);
         MinimalSeedDurability = category.CreateEntry(nameof(MinimalSeedDurability), 0);
+        WrapSeeds = category.CreateEntry(nameof(WrapSeeds), false);
 
         Odyssey = category.CreateEntry<KeyCode[]>(nameof(Odyssey), [O]);
         Cancel = category.CreateEntry<KeyCode[]>(nameof(Cancel), [Alpha5]);
         Shift = category.CreateEntry<KeyCode[][]>(nameof(Shift), [[LeftControl, LeftShift, Tab]]);
-        Slots = category.CreateEntry<KeyCode[][]>(nameof(Slots), [[A], [S], [D], [F], [Z], [X], [C]]);
+        Slots = category.CreateEntry<KeyCode[][]>(nameof(Slots), [[A], [S], [D], [F], [Z], [X], [C], [V]]);
         OdysseyData = category.CreateEntry<int[]?[]>(nameof(OdysseyData), []);
 
         Type[] allowMethodTypes = [typeof(int), typeof(int), typeof(bool)];
         var putDownItemMethod = typeof(Mouse).GetMethod(nameof(Mouse.PutDownItem), Flags, null, [], null);
         var allowMethod = typeof(Screen).GetMethod(nameof(Screen.SetResolution), Flags, null, allowMethodTypes, null);
-        HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)PutDownItem).Method));
+        var getKeyDownMethod = typeof(Input).GetMethod(nameof(Input.GetKeyDown), Flags, null, [typeof(KeyCode)], null);
+        HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)InvokeOnPutDownItem).Method));
         HarmonyInstance.Patch(allowMethod, new(((Delegate)AllowResolutionToChange).Method));
+        HarmonyInstance.Patch(getKeyDownMethod, new(((Delegate)IsReserved).Method));
 
         OnPutDownItem += AcknowledgeItemWasPutDown;
     }
-
-    void AcknowledgeItemWasPutDown() => IsBuffering = false;
 
     /// <inheritdoc />
     public override void OnDeinitializeMelon() => OnPutDownItem -= AcknowledgeItemWasPutDown;
@@ -105,11 +110,13 @@ public sealed class TrowelMod : MelonMod
     /// <inheritdoc />
     public override void OnUpdate()
     {
+        using var lifetime = new Lifetime(out _updating);
         SetOdysseyState();
+        SetSeedGroup();
 
         if (Disabled || Mouse.Instance is var mouse && !mouse)
         {
-            IsBuffering = false;
+            Buffering = false;
             return;
         }
 
@@ -124,26 +131,35 @@ public sealed class TrowelMod : MelonMod
         BufferKeys(mouse, cards);
         BufferScrollWheel(mouse, cards);
 
-        if (IsBuffering)
+        if (Buffering)
             SelectBufferedCard(mouse, cards);
     }
+
+    static void InvokeOnPutDownItem() => OnPutDownItem();
 
     static bool AllowResolutionToChange(int width, int height, bool fullscreen) =>
         Melon<TrowelMod>.Instance.AllowResolutionChanges.Value && (Disabled || Cards() is []);
 
-    static bool PutDownItem()
+    static bool IsAny(KeyCode match, params ReadOnlySpan<KeyCode[]> arrays)
     {
-        OnPutDownItem?.Invoke();
-        return true;
+        foreach (var array in arrays)
+            if (MemoryMarshal.Cast<KeyCode, int>(array).Contains((int)match))
+                return true;
+
+        return false;
     }
+
+    static bool IsReserved(KeyCode key, ref bool __result) =>
+        Melon<TrowelMod>.Instance is var m && m._updating ||
+        !IsAny(key, m.Cancel.Value, m.Odyssey.Value) && !IsAny(key, m.Shift.Value) && !IsAny(key, m.Slots.Value) ||
+        (__result = false);
 
     static ListCardUI? Cards() =>
         ConveyManager.Instance is var conveyor && conveyor ? conveyor.cardsOnBelt :
         InGameUI_IZ.Instance is var iZombie && iZombie ? iZombie.Cards :
         InGameUI.Instance is var ui && ui ? ui.Cards : null;
 
-    void Buffer(ListCardUI cards, int i) =>
-        (IsBuffering, _last) = (true, (i % cards.Count + cards.Count) % cards.Count);
+    void Buffer(ListCardUI cards, int i) => (Buffering, _last) = (true, (i % cards.Count + cards.Count) % cards.Count);
 
     void BufferKeys(Mouse mouse, ListCardUI cards)
     {
@@ -200,12 +216,14 @@ public sealed class TrowelMod : MelonMod
             Buffer(cards, _last + offset);
     }
 
+    void AcknowledgeItemWasPutDown() => Buffering = false;
+
     void SelectBufferedCard(Mouse mouse, ListCardUI cards)
     {
         if (cards[_last] is not { isAvailable: true } card)
             return;
 
-        IsBuffering = false;
+        Buffering = false;
         var needsSpriteUpdate = mouse.mouseItemType is MouseItemType.Plant_preview or MouseItemType.Zombie_preview;
         mouse.PutDownItem();
 
@@ -240,6 +258,26 @@ public sealed class TrowelMod : MelonMod
         previewRenderer.sprite = itemRenderer.sprite;
     }
 
+    void SetColor(ListCardUI cards)
+    {
+        const float ShadeIntensity = 1.5f;
+
+        if (!ColorSlots.Value)
+            return;
+
+        for (var i = 0; i < cards.Count && cards[i].GetComponent<Image>() is var image; i++)
+            if (image && image.color is { g: var g } color)
+                image.color = color with
+                {
+                    g = (i / Slots.Value.Length % 2) switch
+                    {
+                        0 when g <= 1 / ShadeIntensity => g * ShadeIntensity,
+                        1 when g > 1 / ShadeIntensity => g / ShadeIntensity,
+                        _ => g,
+                    },
+                };
+    }
+
     void SetDurabilityAndSafety(ListCardUI cards)
     {
         void SetData(TreasureCardData data, ListCardUI cards)
@@ -263,26 +301,6 @@ public sealed class TrowelMod : MelonMod
         foreach (var data in TreasureManager.Instance.cardData)
             if (!TreasureData.treasureCards.Contains(data))
                 SetData(data, cards);
-    }
-
-    void SetColor(ListCardUI cards)
-    {
-        const float ShadeIntensity = 2;
-
-        if (!ColorSlots.Value)
-            return;
-
-        for (var i = 0; i < cards.Count && cards[i].GetComponent<Image>() is var image; i++)
-            if (image && image.color is { g: var g } color)
-                image.color = color with
-                {
-                    g = (i / Slots.Value.Length % 2) switch
-                    {
-                        0 when g <= 1 / ShadeIntensity => g * ShadeIntensity,
-                        1 when g > 1 / ShadeIntensity => g / ShadeIntensity,
-                        _ => g,
-                    },
-                };
     }
 
     void SetOdysseyState()
@@ -332,6 +350,28 @@ public sealed class TrowelMod : MelonMod
 
         if (!forceOdyssey)
             Object.Destroy(travel);
+    }
+
+    void SetSeedGroup()
+    {
+        if (InGameUI.Instance is var ui && !ui ||
+            ui.SeedBank is var bank && !bank ||
+            bank.transform.Find("SeedGroup") is var seedGroup && !seedGroup ||
+            seedGroup.GetComponent<GridLayoutGroup>() is var grid && !grid)
+            return;
+
+        var rows = Slots.Value.Length;
+        var columns = (int)Math.Ceiling(14f / rows);
+        grid.m_ConstraintCount = rows;
+        grid.m_Constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+        grid.m_StartAxis = grid.startAxis = GridLayoutGroup.Axis.Horizontal;
+        grid.cellSize = new(50f / columns, 70f / columns);
+
+        if (Cards() is not { } cards)
+            return;
+
+        foreach (var card in cards)
+            card.transform.parent.localScale = core::UnityEngine.Vector3.one / columns;
     }
 
     TravelMgr ForEach(TravelMgr travel, ActionSpan action)

@@ -11,92 +11,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/db59ea5da40243feba209c965be03e8a7c00/b6/09ac1e30/0200000Apdb2.il" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/16201594d2d74d00ba3db26ac383b406168000/5f/ea1bae12/PublicMethods.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/16201594d2d74d00ba3db26ac383b406168000/72/0a9542bb/CommandAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/16201594d2d74d00ba3db26ac383b406168000/b9/055a2f0a/CommandMethods.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/16201594d2d74d00ba3db26ac383b406168000/e5/c69bc4ad/ModAPP.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e319ac5bcb841c1a959dab36ad8acdd4a3e00/6e/b2c8317a/CardLevel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e319ac5bcb841c1a959dab36ad8acdd4a3e00/be/fd19f909/TravelMgr.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e319ac5bcb841c1a959dab36ad8acdd4a3e00/ee/a8f76976/TravelDebuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2e319ac5bcb841c1a959dab36ad8acdd4a3e00/f4/3ba1fbc5/AdvBuff.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/347077d35989403683225fd34a2bf2f8538a00/e2/b5b1bddd/GameStatus.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/19/91a296dc/LevelType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/22/53758120/SkinLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/31/fb83341d/ExploreLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/ac/ac4d7dfe/TowerUpgradeType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/ca/e1db81d5/SurvivalLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/45ab28ea8a864df191c3952aa1a910b139b600/fe/20a6a461/ChallengeLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc197000/3d/8ed628c4/ConfusedByAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc197000/d0/963ea4cd/Plugin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fa600/0b/515a9ee1/Class7.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fa600/e7/73c893ce/Plugin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fc400/2a/65157698/Class7.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fc400/50/b569c85d/ConfusedByAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d46355b28a248a5996193b331c65cfc3fc400/90/5d8baa0f/Plugin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6350b88845c442acaceb704ff3cc91b64a3e00/72/d8341766/List`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/08/7487fcbe/TravelDebuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/33/a3e38171/InvestBuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/92/bac0a3eb/UltiBuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/b4/528b64bb/AdvBuff.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/d0/aa1c91ef/PlantType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/65abf513374949c3b1b50f9344573fe54bc000/fe/d4c70630/TravelUnlocks.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73a0fcca88544a27ae8eedab855c1ce43e8200/6f/8e765101/TravelAdvanture.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8c5acd57f2b44c56b3a670b184849847484800/0d/4d971792/List`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8c5acd57f2b44c56b3a670b184849847484800/95/b2861f41/Unsafe.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9853996095264ec8bc00d6021b306fdb4a1e00/1f/6295921c/List`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9853996095264ec8bc00d6021b306fdb4a1e00/73/d0959ab3/Object.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9853996095264ec8bc00d6021b306fdb4a1e00/e5/f183a593/Predicate`1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9b23a437049c4837ad731ad28ed95f439ee800/d9/1a374a64/OpCode.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9b23a437049c4837ad731ad28ed95f439ee800/d9/20bb3c82/Attribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9b23a437049c4837ad731ad28ed95f439ee800/da/a81d7499/IDisposable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a50bf32d6e1944898c908fc5b9864162e400/fe/1f0f5901/Input.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b195ad9d2c1645fda3805d85f8af25b22f6200/41/943305c4/Screen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b195ad9d2c1645fda3805d85f8af25b22f6200/95/d6769493/HideFlags.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c085dc8e86384478a7a548c799c9b5f840800/12/5d0fdd7c/Harmony.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c085dc8e86384478a7a548c799c9b5f840800/36/7d09ce82/CodeInstruction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c085dc8e86384478a7a548c799c9b5f840800/9e/ddd52765/Transpilers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/05/fbc115bc/Board.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/2f/b14263ff/BoardGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/3c/0c87101d/Solar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/60/a69ebedf/Plant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/77/4416cfdc/CobCannon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/96/fe5846bb/Mouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/ab/dea828cc/MelonCannon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db9a51cf0242477695878e9893523f7b313c00/ba/d5204d6d/InGameUI_IZ.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/2b/65c7fb85/Plugin.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/41/93cf43f8/MyPluginInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/71/26595679/&lt;Module&gt;.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/7b/098e9d0d/ConfusedByAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/ac/4f2791bf/Attribute1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/edbed6d72aa547799ca10ac477e50dd918a000/c8/198fee4d/Attribute0.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f4c97f7fddc84735b8fa67e65191c374399c00/06/85fb8259/LevelType.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f4c97f7fddc84735b8fa67e65191c374399c00/dc/2f752a36/ChallengeLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/0d/30d6baf9/SeedLibrary.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/0f/4cda3f30/IZECard.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/3d/19a1d7d3/GameAPP.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/54/7cbb317e/InGameUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/68/919dfee1/TreasureCardData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/89/60405dcd/ChallengeLevel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/8b/84f37b84/InGameBtn.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/a1/f7b33b22/ConveyBeltMgr.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/c5/5f3a2cec/Mouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/c6/df7c06b4/CardUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd04e30fb8fe457ca6fcf9d2778a14da360200/ca/7320cc55/TreasureCard.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/5d46355b28a248a5996193b331c65cfc3fc400/f2/f9e32cb6/SuperObsidianChomper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1e91e345c9137be329ee141785e56d2e33ac8b7146a87c6a5950f933b4909c/MelonBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2ed887ca7d94b47346b5973d7bda7e4544af1298ace17b752f7cd6dc8f2e8da/SpanExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/30e14990ca42c4b14da0ac856ffc4d37c32e98b7c2662658251c577ad51d956a/MelonPreferences.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7f24343bcc23e9f793e1a88a8815dfdd22d24f4bc6f2074f6618f6423bc8c/Il2CppObjectBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/907c3bdf6c4435123156397bd4e624e9f58cc37f83a8fde7f8de82d7469cae/MelonPreferences_Entry.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9aba63682d568374a33f5a836ea152a01254c036758bccaecd54b36b11ccb22/IL2CPP.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9b23a437049c4837ad731ad28ed95f439ee800/_231dd/IEnumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9b23a437049c4837ad731ad28ed95f439ee800/_ec32c/IEnumerable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b520a2bd865f8ee47e76cc2d66212838e383bfd1b2ca29addd4ab5eb4c9cbc/Il2CppException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b9bc1c93c027a3f6272cdfbb939a73c13a9b9e54b05925d87e940163f512/Il2CppArrayBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e470ef845fef945ef5da6b7abf3e43341341e4cba91a071d50f21f4b4a4a6/IJEnumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e5828ffed9549792f2583d81c877e6a46fd39d6ed3983e4067ed91cbac18b/Il2CppStructArray.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fb125064b9ff0b1dc46462cd0ed5d6f8de3ab83db3ec69ba0e6a032f3fe7092/HarmonyMethod.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62d38d6504de4738a86d95f847b12b8c2fc200/b5/b061750f/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9997e2a242f743c2bf9b8226407ada2ae400/8d/273758ef/Input.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c76e99439b181b80cfff9484f22be3364354f428f98533faeb942c757a2f0/ReadOnlySpan.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/be216102a9b66134730c9edf7511802bf4de8463939f1384929344c079da51/ByReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/Span.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/SplitSpan.Enumerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/SplitSpan.cs" root0="FORCE_HIGHLIGHTING" />
@@ -114,7 +32,6 @@
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Numerics/OperatorCaching.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Runtime/InteropServices/ListMarshal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/System/Diagnostics/Attributes.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/System/SpanHelpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/LevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TravelSpans.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/TrowelMod.cs" root0="FORCE_HIGHLIGHTING" />
@@ -128,17 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/emik/.dotnet/sdk/MSBuild.dll&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "/home/emik/.dotnet/sdk/MSBuild.dll",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
@@ -149,7 +67,6 @@
       <option name="selectedOptions">
         <list />
       </option>
-      <option name="useMixedMode" value="false" />
       <method v="2" />
     </configuration>
   </component>
