@@ -9,7 +9,6 @@ global using global::System.CodeDom;
 global using global::System.CodeDom.Compiler;
 global using global::System.Collections;
 global using global::System.Collections.Concurrent;
-global using global::System.Collections.Frozen;
 global using global::System.Collections.Generic;
 global using global::System.Collections.Immutable;
 global using global::System.Collections.ObjectModel;
@@ -19,25 +18,6 @@ global using global::System.ComponentModel.DataAnnotations;
 global using global::System.ComponentModel.DataAnnotations.Schema;
 global using global::System.ComponentModel.Design;
 global using global::System.ComponentModel.Design.Serialization;
-global using global::System.Composition;
-global using global::System.Composition.Convention;
-global using global::System.Composition.Debugging;
-global using global::System.Composition.Diagnostics;
-global using global::System.Composition.Hosting;
-global using global::System.Composition.Hosting.Core;
-global using global::System.Composition.Hosting.Providers;
-global using global::System.Composition.Hosting.Providers.CurrentScope;
-global using global::System.Composition.Hosting.Providers.ExportFactory;
-global using global::System.Composition.Hosting.Providers.ImportMany;
-global using global::System.Composition.Hosting.Providers.Lazy;
-global using global::System.Composition.Hosting.Providers.Metadata;
-global using global::System.Composition.Hosting.Util;
-global using global::System.Composition.Runtime;
-global using global::System.Composition.Runtime.Util;
-global using global::System.Composition.TypedParts;
-global using global::System.Composition.TypedParts.ActivationFeatures;
-global using global::System.Composition.TypedParts.Discovery;
-global using global::System.Composition.TypedParts.Util;
 global using global::System.Configuration;
 global using global::System.Configuration.Assemblies;
 global using global::System.Configuration.Internal;
@@ -65,6 +45,8 @@ global using global::System.Drawing.Configuration;
 global using global::System.Drawing.Design;
 global using global::System.Drawing.Drawing2D;
 global using global::System.Drawing.Imaging;
+global using global::System.Drawing.Internal;
+global using global::System.Drawing.Interop;
 global using global::System.Drawing.Printing;
 global using global::System.Drawing.Text;
 global using global::System.Dynamic;
@@ -74,12 +56,10 @@ global using global::System.Globalization;
 global using global::System.IO;
 global using global::System.IO.Compression;
 global using global::System.IO.Enumeration;
-global using global::System.IO.Hashing;
 global using global::System.IO.Internal;
 global using global::System.IO.IsolatedStorage;
 global using global::System.IO.MemoryMappedFiles;
 global using global::System.IO.Packaging;
-global using global::System.IO.Pipelines;
 global using global::System.IO.Pipes;
 global using global::System.IO.Ports;
 global using global::System.Linq;
@@ -102,7 +82,6 @@ global using global::System.Numerics;
 global using global::System.Numerics.Hashing;
 global using global::System.Reflection;
 global using global::System.Reflection.Emit;
-global using global::System.Reflection.Internal;
 global using global::System.Reflection.Metadata;
 global using global::System.Reflection.Metadata.Ecma335;
 global using global::System.Reflection.PortableExecutable;
@@ -157,6 +136,7 @@ global using global::System.Timers;
 global using global::System.Transactions;
 global using global::System.Web;
 global using global::System.Windows;
+global using global::System.Windows.Forms;
 global using global::System.Windows.Input;
 global using global::System.Windows.Markup;
 global using global::System.Xaml;
@@ -221,19 +201,14 @@ global using global::AsmResolver.Shims;
 global using global::AssetRipper;
 global using global::AssetRipper.Primitives;
 global using global::AssetRipper.Primitives.Extensions;
+global using global::AssetRipper.VersionUtilities;
+global using global::AssetRipper.VersionUtilities.Extensions;
 global using global::AssetsTools;
 global using global::AssetsTools.NET;
 global using global::AssetsTools.NET.Extra;
 global using global::AssetsTools.NET.Extra.Decompressors;
 global using global::AssetsTools.NET.Extra.Decompressors.LZ4;
 global using global::CommunityToolkit;
-global using global::CommunityToolkit.Common;
-global using global::CommunityToolkit.Common.Collections;
-global using global::CommunityToolkit.Common.Deferred;
-global using global::CommunityToolkit.Common.Extensions;
-global using global::CommunityToolkit.Common.Helpers;
-global using global::CommunityToolkit.Diagnostics;
-global using global::CommunityToolkit.Helpers;
 global using global::CommunityToolkit.HighPerformance;
 global using global::CommunityToolkit.HighPerformance.Buffers;
 global using global::CommunityToolkit.HighPerformance.Buffers.Internals;
@@ -246,78 +221,35 @@ global using global::CommunityToolkit.HighPerformance.Memory;
 global using global::CommunityToolkit.HighPerformance.Memory.Internals;
 global using global::CommunityToolkit.HighPerformance.Memory.Views;
 global using global::CommunityToolkit.HighPerformance.Streams;
-global using global::DotNetProjectFile;
-global using global::DotNetProjectFile.Analyzers;
-global using global::DotNetProjectFile.Analyzers.EditorConfig;
-global using global::DotNetProjectFile.Analyzers.Generic;
-global using global::DotNetProjectFile.Analyzers.Helpers;
-global using global::DotNetProjectFile.Analyzers.Ini;
-global using global::DotNetProjectFile.Analyzers.MsBuild;
-global using global::DotNetProjectFile.Analyzers.Resx;
-global using global::DotNetProjectFile.Analyzers.Slnx;
-global using global::DotNetProjectFile.BuildAgents;
-global using global::DotNetProjectFile.Caching;
-global using global::DotNetProjectFile.CodeAnalysis;
-global using global::DotNetProjectFile.Collections;
-global using global::DotNetProjectFile.Conversion;
-global using global::DotNetProjectFile.Diagnostics;
-global using global::DotNetProjectFile.EditorConfig;
-global using global::DotNetProjectFile.Git;
-global using global::DotNetProjectFile.IO;
-global using global::DotNetProjectFile.Ini;
-global using global::DotNetProjectFile.Licensing;
-global using global::DotNetProjectFile.MsBuild;
-global using global::DotNetProjectFile.MsBuild.CSharp;
-global using global::DotNetProjectFile.MsBuild.Conversion;
-global using global::DotNetProjectFile.MsBuild.VisualBasic;
-global using global::DotNetProjectFile.Navigation;
-global using global::DotNetProjectFile.NuGet;
-global using global::DotNetProjectFile.NuGet.Packaging;
-global using global::DotNetProjectFile.Parsing;
-global using global::DotNetProjectFile.Parsing.Internal;
-global using global::DotNetProjectFile.Resx;
-global using global::DotNetProjectFile.Slnx;
-global using global::DotNetProjectFile.Syntax;
-global using global::DotNetProjectFile.Text;
-global using global::DotNetProjectFile.Text.Globbing;
-global using global::DotNetProjectFile.Xml;
 global using global::Emik;
-global using global::Emik.Morsels;
 global using global::FxResources;
 global using global::FxResources.Microsoft;
+global using global::FxResources.Microsoft.Bcl;
+global using global::FxResources.Microsoft.Bcl.Memory;
 global using global::FxResources.Microsoft.Extensions;
+global using global::FxResources.Microsoft.Extensions.Configuration;
+global using global::FxResources.Microsoft.Extensions.Configuration.Abstractions;
+global using global::FxResources.Microsoft.Extensions.DependencyInjection;
+global using global::FxResources.Microsoft.Extensions.DependencyInjection.Abstractions;
 global using global::FxResources.Microsoft.Extensions.Logging;
 global using global::FxResources.Microsoft.Extensions.Logging.Abstractions;
+global using global::FxResources.Microsoft.Extensions.Options;
+global using global::FxResources.Microsoft.Extensions.Primitives;
+global using global::FxResources.Microsoft.Win32;
+global using global::FxResources.Microsoft.Win32.SystemEvents;
 global using global::FxResources.System;
-global using global::FxResources.System.Collections;
-global using global::FxResources.System.Collections.Immutable;
-global using global::FxResources.System.Composition;
-global using global::FxResources.System.Composition.Convention;
-global using global::FxResources.System.Composition.Hosting;
-global using global::FxResources.System.Composition.Runtime;
-global using global::FxResources.System.Composition.TypedParts;
 global using global::FxResources.System.Configuration;
 global using global::FxResources.System.Configuration.ConfigurationManager;
-global using global::FxResources.System.IO;
-global using global::FxResources.System.IO.Pipelines;
-global using global::FxResources.System.Reflection;
-global using global::FxResources.System.Reflection.Metadata;
+global using global::FxResources.System.Diagnostics;
+global using global::FxResources.System.Diagnostics.DiagnosticSource;
+global using global::FxResources.System.Drawing;
+global using global::FxResources.System.Drawing.Common;
 global using global::FxResources.System.Security;
 global using global::FxResources.System.Security.Cryptography;
 global using global::FxResources.System.Security.Cryptography.ProtectedData;
 global using global::FxResources.System.Security.Permissions;
-global using global::FxResources.System.Text;
-global using global::FxResources.System.Text.Encoding;
-global using global::FxResources.System.Text.Encoding.CodePages;
-global using global::FxResources.System.Threading;
-global using global::FxResources.System.Threading.Channels;
 global using global::FxResources.System.Windows;
 global using global::FxResources.System.Windows.Extensions;
-global using global::Grammr;
-global using global::Grammr.Lexers;
-global using global::Grammr.Parsers;
-global using global::Grammr.Syntax;
-global using global::Grammr.Text;
 global using global::Harmony;
 global using global::HarmonyLib;
 global using global::HarmonyLib.Internal;
@@ -343,6 +275,17 @@ global using global::Iced.Intel.MasmFormatterInternal;
 global using global::Iced.Intel.NasmFormatterInternal;
 global using global::Il2Cpp;
 global using global::Il2CppAOT;
+global using global::Il2CppAdvBuffData;
+global using global::Il2CppAlmanacData;
+global using global::Il2CppCysharp;
+global using global::Il2CppCysharp.Threading;
+global using global::Il2CppCysharp.Threading.Tasks;
+global using global::Il2CppCysharp.Threading.Tasks.CompilerServices;
+global using global::Il2CppCysharp.Threading.Tasks.Internal;
+global using global::Il2CppCysharp.Threading.Tasks.Triggers;
+global using global::Il2CppGameLevel;
+global using global::Il2CppGameLevel.EventNodes;
+global using global::Il2CppGameLevel.OnLine;
 global using global::Il2CppInternal;
 global using global::Il2CppInternal.Cryptography;
 global using global::Il2CppInternal.Runtime;
@@ -401,27 +344,35 @@ global using global::Il2CppMono.Interop;
 global using global::Il2CppMono.Security;
 global using global::Il2CppMono.Security.Cryptography;
 global using global::Il2CppMono.Xml;
+global using global::Il2CppPlantEvolution;
+global using global::Il2CppRhythmGame;
+global using global::Il2CppRhythmGameEditor;
+global using global::Il2CppSimpleFileBrowser;
 global using global::Il2CppTMPro;
 global using global::Il2CppTMPro.SpriteAssetUtilities;
 global using global::Il2CppVarietyFX;
+global using global::Il2CppZenGarden;
 global using global::Il2Cppcom;
 global using global::Il2Cppcom.cyborgAssets;
 global using global::Il2Cppcom.cyborgAssets.inspectorButtonPro;
 global using global::Il2Cppcom.cyborgAssets.internalIBP;
 global using global::Il2Cppcom.cyborgAssets.internalIBPExample;
 global using global::InlineIL;
-global using global::InlineMethod;
 global using global::Internal;
 global using global::Internal.Cryptography;
 global using global::JetBrains;
 global using global::JetBrains.Annotations;
 global using global::LZ4ps;
-global using global::LocalsInit;
 global using global::MelonLoader;
 global using global::MelonLoader.Assertions;
 global using global::MelonLoader.Bootstrap;
 global using global::MelonLoader.CoreClrUtils;
 global using global::MelonLoader.Fixes;
+global using global::MelonLoader.Fixes.AsmResolver;
+global using global::MelonLoader.Fixes.Dotnet;
+global using global::MelonLoader.Fixes.Harmony;
+global using global::MelonLoader.Fixes.Il2CppInterop;
+global using global::MelonLoader.Fixes.MonoMod;
 global using global::MelonLoader.ICSharpCode;
 global using global::MelonLoader.ICSharpCode.SharpZipLib;
 global using global::MelonLoader.ICSharpCode.SharpZipLib.BZip2;
@@ -447,6 +398,7 @@ global using global::MelonLoader.NativeUtils.PEParser;
 global using global::MelonLoader.Pastel;
 global using global::MelonLoader.Preferences;
 global using global::MelonLoader.Preferences.IO;
+global using global::MelonLoader.Properties;
 global using global::MelonLoader.Resolver;
 global using global::MelonLoader.TinyJSON;
 global using global::MelonLoader.Utils;
@@ -456,131 +408,6 @@ global using global::Microsoft.CSharp.RuntimeBinder;
 global using global::Microsoft.Cci;
 global using global::Microsoft.Cci.Pdb;
 global using global::Microsoft.CodeAnalysis;
-global using global::Microsoft.CodeAnalysis.AddImport;
-global using global::Microsoft.CodeAnalysis.CaseCorrection;
-global using global::Microsoft.CodeAnalysis.ChangeNamespace;
-global using global::Microsoft.CodeAnalysis.Classification;
-global using global::Microsoft.CodeAnalysis.Classification.Classifiers;
-global using global::Microsoft.CodeAnalysis.CodeActions;
-global using global::Microsoft.CodeAnalysis.CodeCleanup;
-global using global::Microsoft.CodeAnalysis.CodeCleanup.Providers;
-global using global::Microsoft.CodeAnalysis.CodeFixes;
-global using global::Microsoft.CodeAnalysis.CodeFixesAndRefactorings;
-global using global::Microsoft.CodeAnalysis.CodeGen;
-global using global::Microsoft.CodeAnalysis.CodeGeneration;
-global using global::Microsoft.CodeAnalysis.CodeRefactorings;
-global using global::Microsoft.CodeAnalysis.CodeStyle;
-global using global::Microsoft.CodeAnalysis.Collections;
-global using global::Microsoft.CodeAnalysis.Collections.Internal;
-global using global::Microsoft.CodeAnalysis.Debugging;
-global using global::Microsoft.CodeAnalysis.Diagnostics;
-global using global::Microsoft.CodeAnalysis.Diagnostics.Analyzers;
-global using global::Microsoft.CodeAnalysis.Diagnostics.Analyzers.NamingStyles;
-global using global::Microsoft.CodeAnalysis.Diagnostics.Telemetry;
-global using global::Microsoft.CodeAnalysis.Differencing;
-global using global::Microsoft.CodeAnalysis.Editing;
-global using global::Microsoft.CodeAnalysis.EditorConfig;
-global using global::Microsoft.CodeAnalysis.EditorConfig.Parsing;
-global using global::Microsoft.CodeAnalysis.EditorConfig.Parsing.NamingStyles;
-global using global::Microsoft.CodeAnalysis.EmbeddedLanguages;
-global using global::Microsoft.CodeAnalysis.EmbeddedLanguages.Common;
-global using global::Microsoft.CodeAnalysis.EmbeddedLanguages.VirtualChars;
-global using global::Microsoft.CodeAnalysis.Emit;
-global using global::Microsoft.CodeAnalysis.Emit.EditAndContinue;
-global using global::Microsoft.CodeAnalysis.Emit.NoPia;
-global using global::Microsoft.CodeAnalysis.ErrorLogger;
-global using global::Microsoft.CodeAnalysis.ErrorReporting;
-global using global::Microsoft.CodeAnalysis.Extensions;
-global using global::Microsoft.CodeAnalysis.ExternalAccess;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.Pythia;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.Pythia.Api;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.UnitTesting;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.UnitTesting.Api;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.VSTypeScript;
-global using global::Microsoft.CodeAnalysis.ExternalAccess.VSTypeScript.Api;
-global using global::Microsoft.CodeAnalysis.ExtractMethod;
-global using global::Microsoft.CodeAnalysis.FindSymbols;
-global using global::Microsoft.CodeAnalysis.FindSymbols.FindReferences;
-global using global::Microsoft.CodeAnalysis.FindSymbols.Finders;
-global using global::Microsoft.CodeAnalysis.FindSymbols.SymbolTree;
-global using global::Microsoft.CodeAnalysis.FlowAnalysis;
-global using global::Microsoft.CodeAnalysis.FlowAnalysis.SymbolUsageAnalysis;
-global using global::Microsoft.CodeAnalysis.Formatting;
-global using global::Microsoft.CodeAnalysis.Formatting.Rules;
-global using global::Microsoft.CodeAnalysis.GeneratedCodeRecognition;
-global using global::Microsoft.CodeAnalysis.Host;
-global using global::Microsoft.CodeAnalysis.Host.Mef;
-global using global::Microsoft.CodeAnalysis.Indentation;
-global using global::Microsoft.CodeAnalysis.InitializeParameter;
-global using global::Microsoft.CodeAnalysis.Internal;
-global using global::Microsoft.CodeAnalysis.Internal.Log;
-global using global::Microsoft.CodeAnalysis.InternalUtilities;
-global using global::Microsoft.CodeAnalysis.Interop;
-global using global::Microsoft.CodeAnalysis.LanguageService;
-global using global::Microsoft.CodeAnalysis.LanguageService.TypeInferenceService;
-global using global::Microsoft.CodeAnalysis.MoveDeclarationNearReference;
-global using global::Microsoft.CodeAnalysis.NamingStyles;
-global using global::Microsoft.CodeAnalysis.Notification;
-global using global::Microsoft.CodeAnalysis.ObsoleteSymbol;
-global using global::Microsoft.CodeAnalysis.Operations;
-global using global::Microsoft.CodeAnalysis.Options;
-global using global::Microsoft.CodeAnalysis.OrganizeImports;
-global using global::Microsoft.CodeAnalysis.Packaging;
-global using global::Microsoft.CodeAnalysis.PatternMatching;
-global using global::Microsoft.CodeAnalysis.PooledObjects;
-global using global::Microsoft.CodeAnalysis.Precedence;
-global using global::Microsoft.CodeAnalysis.Progress;
-global using global::Microsoft.CodeAnalysis.ProjectSystem;
-global using global::Microsoft.CodeAnalysis.ReassignedVariable;
-global using global::Microsoft.CodeAnalysis.Recommendations;
-global using global::Microsoft.CodeAnalysis.Remote;
-global using global::Microsoft.CodeAnalysis.RemoveUnnecessaryImports;
-global using global::Microsoft.CodeAnalysis.Rename;
-global using global::Microsoft.CodeAnalysis.Rename.ConflictEngine;
-global using global::Microsoft.CodeAnalysis.ReplaceDiscardDeclarationsWithAssignments;
-global using global::Microsoft.CodeAnalysis.RuntimeMembers;
-global using global::Microsoft.CodeAnalysis.SQLite;
-global using global::Microsoft.CodeAnalysis.SQLite.Interop;
-global using global::Microsoft.CodeAnalysis.SQLite.v2;
-global using global::Microsoft.CodeAnalysis.SQLite.v2.Interop;
-global using global::Microsoft.CodeAnalysis.SemanticModelReuse;
-global using global::Microsoft.CodeAnalysis.Serialization;
-global using global::Microsoft.CodeAnalysis.Shared;
-global using global::Microsoft.CodeAnalysis.Shared.CodeStyle;
-global using global::Microsoft.CodeAnalysis.Shared.Collections;
-global using global::Microsoft.CodeAnalysis.Shared.Extensions;
-global using global::Microsoft.CodeAnalysis.Shared.Extensions.ContextQuery;
-global using global::Microsoft.CodeAnalysis.Shared.Helpers;
-global using global::Microsoft.CodeAnalysis.Shared.Helpers.RemoveUnnecessaryImports;
-global using global::Microsoft.CodeAnalysis.Shared.Naming;
-global using global::Microsoft.CodeAnalysis.Shared.TestHooks;
-global using global::Microsoft.CodeAnalysis.Shared.Utilities;
-global using global::Microsoft.CodeAnalysis.Simplification;
-global using global::Microsoft.CodeAnalysis.Simplification.Simplifiers;
-global using global::Microsoft.CodeAnalysis.SolutionCrawler;
-global using global::Microsoft.CodeAnalysis.SourceGeneration;
-global using global::Microsoft.CodeAnalysis.SourceGeneratorTelemetry;
-global using global::Microsoft.CodeAnalysis.Storage;
-global using global::Microsoft.CodeAnalysis.SymbolDisplay;
-global using global::Microsoft.CodeAnalysis.SymbolSearch;
-global using global::Microsoft.CodeAnalysis.Symbols;
-global using global::Microsoft.CodeAnalysis.Syntax;
-global using global::Microsoft.CodeAnalysis.Syntax.InternalSyntax;
-global using global::Microsoft.CodeAnalysis.Tags;
-global using global::Microsoft.CodeAnalysis.TaskList;
-global using global::Microsoft.CodeAnalysis.Telemetry;
-global using global::Microsoft.CodeAnalysis.Text;
-global using global::Microsoft.CodeAnalysis.UnitTests;
-global using global::Microsoft.CodeAnalysis.Utilities;
-global using global::Microsoft.CodeAnalysis.VisualBasic;
-global using global::Microsoft.CodeAnalysis.VisualBasic.CodeGeneration;
-global using global::Microsoft.CodeAnalysis.VisualBasic.CodeStyle;
-global using global::Microsoft.CodeAnalysis.VisualBasic.Formatting;
-global using global::Microsoft.CodeAnalysis.VisualBasic.Simplification;
-global using global::Microsoft.CodeAnalysis.Workspaces;
-global using global::Microsoft.CodeAnalysis.Workspaces.Diagnostics;
-global using global::Microsoft.CodeAnalysis.Workspaces.ProjectSystem;
-global using global::Microsoft.DiaSymReader;
 global using global::Microsoft.Diagnostics;
 global using global::Microsoft.Diagnostics.NETCore;
 global using global::Microsoft.Diagnostics.NETCore.Client;
@@ -605,8 +432,9 @@ global using global::Microsoft.Extensions.Configuration;
 global using global::Microsoft.Extensions.Configuration.Binder;
 global using global::Microsoft.Extensions.Configuration.Memory;
 global using global::Microsoft.Extensions.DependencyInjection;
-global using global::Microsoft.Extensions.DependencyInjection.Abstractions;
 global using global::Microsoft.Extensions.DependencyInjection.Extensions;
+global using global::Microsoft.Extensions.DependencyInjection.ServiceLookup;
+global using global::Microsoft.Extensions.FileProviders;
 global using global::Microsoft.Extensions.Internal;
 global using global::Microsoft.Extensions.Logging;
 global using global::Microsoft.Extensions.Logging.Abstractions;
@@ -657,11 +485,6 @@ global using global::Newtonsoft.Json.Serialization;
 global using global::Newtonsoft.Json.Utilities;
 global using global::NullGuard;
 global using global::NullGuard.CodeAnalysis;
-global using global::Roslyn;
-global using global::Roslyn.Utilities;
-global using global::Scifa;
-global using global::Scifa.CheckedExceptions;
-global using global::Scifa.CheckedExceptions.Attributes;
 global using global::Semver;
 global using global::SevenZip;
 global using global::SevenZip.Buffer;
@@ -703,6 +526,7 @@ global using global::Unity.Jobs.LowLevel.Unsafe;
 global using global::Unity.Loading;
 global using global::Unity.Mathematics;
 global using global::Unity.Mathematics.Geometry;
+global using global::Unity.MemoryProfiler;
 global using global::Unity.Profiling;
 global using global::Unity.Profiling.LowLevel;
 global using global::Unity.Profiling.LowLevel.Unsafe;
@@ -714,6 +538,11 @@ global using global::Unity.SpriteShape.External;
 global using global::Unity.SpriteShape.External.LibTessDotNet;
 global using global::Unity.TLS;
 global using global::Unity.TLS.LowLevel;
+global using global::Unity.VisualScripting;
+global using global::Unity.VisualScripting.AssemblyQualifiedNameParser;
+global using global::Unity.VisualScripting.FullSerializer;
+global using global::Unity.VisualScripting.FullSerializer.Internal;
+global using global::Unity.VisualScripting.FullSerializer.Internal.Converters;
 global using global::UnityEditor;
 global using global::UnityEditor.Experimental;
 global using global::UnityEditor.Rendering;
@@ -758,6 +587,7 @@ global using global::UnityEngine.Internal;
 global using global::UnityEngine.Jobs;
 global using global::UnityEngine.LowLevel;
 global using global::UnityEngine.Lumin;
+global using global::UnityEngine.NVIDIA;
 global using global::UnityEngine.Networking;
 global using global::UnityEngine.Networking.PlayerConnection;
 global using global::UnityEngine.ParticleSystemJobs;
@@ -773,6 +603,7 @@ global using global::UnityEngine.Rendering.Universal;
 global using global::UnityEngine.Rendering.Universal.Internal;
 global using global::UnityEngine.Rendering.Universal.LibTessDotNet;
 global using global::UnityEngine.Rendering.Universal.UTess;
+global using global::UnityEngine.Rendering.VirtualTexturing;
 global using global::UnityEngine.SceneManagement;
 global using global::UnityEngine.Scripting;
 global using global::UnityEngine.Scripting.APIUpdating;
@@ -854,8 +685,6 @@ namespace System.Collections { }
 
 namespace System.Collections.Concurrent { }
 
-namespace System.Collections.Frozen { }
-
 namespace System.Collections.Generic { }
 
 namespace System.Collections.Immutable { }
@@ -873,44 +702,6 @@ namespace System.ComponentModel.DataAnnotations.Schema { }
 namespace System.ComponentModel.Design { }
 
 namespace System.ComponentModel.Design.Serialization { }
-
-namespace System.Composition { }
-
-namespace System.Composition.Convention { }
-
-namespace System.Composition.Debugging { }
-
-namespace System.Composition.Diagnostics { }
-
-namespace System.Composition.Hosting { }
-
-namespace System.Composition.Hosting.Core { }
-
-namespace System.Composition.Hosting.Providers { }
-
-namespace System.Composition.Hosting.Providers.CurrentScope { }
-
-namespace System.Composition.Hosting.Providers.ExportFactory { }
-
-namespace System.Composition.Hosting.Providers.ImportMany { }
-
-namespace System.Composition.Hosting.Providers.Lazy { }
-
-namespace System.Composition.Hosting.Providers.Metadata { }
-
-namespace System.Composition.Hosting.Util { }
-
-namespace System.Composition.Runtime { }
-
-namespace System.Composition.Runtime.Util { }
-
-namespace System.Composition.TypedParts { }
-
-namespace System.Composition.TypedParts.ActivationFeatures { }
-
-namespace System.Composition.TypedParts.Discovery { }
-
-namespace System.Composition.TypedParts.Util { }
 
 namespace System.Configuration { }
 
@@ -966,6 +757,10 @@ namespace System.Drawing.Drawing2D { }
 
 namespace System.Drawing.Imaging { }
 
+namespace System.Drawing.Internal { }
+
+namespace System.Drawing.Interop { }
+
 namespace System.Drawing.Printing { }
 
 namespace System.Drawing.Text { }
@@ -984,8 +779,6 @@ namespace System.IO.Compression { }
 
 namespace System.IO.Enumeration { }
 
-namespace System.IO.Hashing { }
-
 namespace System.IO.Internal { }
 
 namespace System.IO.IsolatedStorage { }
@@ -993,8 +786,6 @@ namespace System.IO.IsolatedStorage { }
 namespace System.IO.MemoryMappedFiles { }
 
 namespace System.IO.Packaging { }
-
-namespace System.IO.Pipelines { }
 
 namespace System.IO.Pipes { }
 
@@ -1039,8 +830,6 @@ namespace System.Numerics.Hashing { }
 namespace System.Reflection { }
 
 namespace System.Reflection.Emit { }
-
-namespace System.Reflection.Internal { }
 
 namespace System.Reflection.Metadata { }
 
@@ -1149,6 +938,8 @@ namespace System.Transactions { }
 namespace System.Web { }
 
 namespace System.Windows { }
+
+namespace System.Windows.Forms { }
 
 namespace System.Windows.Input { }
 
@@ -1278,6 +1069,10 @@ namespace AssetRipper.Primitives { }
 
 namespace AssetRipper.Primitives.Extensions { }
 
+namespace AssetRipper.VersionUtilities { }
+
+namespace AssetRipper.VersionUtilities.Extensions { }
+
 namespace AssetsTools { }
 
 namespace AssetsTools.NET { }
@@ -1289,20 +1084,6 @@ namespace AssetsTools.NET.Extra.Decompressors { }
 namespace AssetsTools.NET.Extra.Decompressors.LZ4 { }
 
 namespace CommunityToolkit { }
-
-namespace CommunityToolkit.Common { }
-
-namespace CommunityToolkit.Common.Collections { }
-
-namespace CommunityToolkit.Common.Deferred { }
-
-namespace CommunityToolkit.Common.Extensions { }
-
-namespace CommunityToolkit.Common.Helpers { }
-
-namespace CommunityToolkit.Diagnostics { }
-
-namespace CommunityToolkit.Helpers { }
 
 namespace CommunityToolkit.HighPerformance { }
 
@@ -1328,117 +1109,51 @@ namespace CommunityToolkit.HighPerformance.Memory.Views { }
 
 namespace CommunityToolkit.HighPerformance.Streams { }
 
-namespace DotNetProjectFile { }
-
-namespace DotNetProjectFile.Analyzers { }
-
-namespace DotNetProjectFile.Analyzers.EditorConfig { }
-
-namespace DotNetProjectFile.Analyzers.Generic { }
-
-namespace DotNetProjectFile.Analyzers.Helpers { }
-
-namespace DotNetProjectFile.Analyzers.Ini { }
-
-namespace DotNetProjectFile.Analyzers.MsBuild { }
-
-namespace DotNetProjectFile.Analyzers.Resx { }
-
-namespace DotNetProjectFile.Analyzers.Slnx { }
-
-namespace DotNetProjectFile.BuildAgents { }
-
-namespace DotNetProjectFile.Caching { }
-
-namespace DotNetProjectFile.CodeAnalysis { }
-
-namespace DotNetProjectFile.Collections { }
-
-namespace DotNetProjectFile.Conversion { }
-
-namespace DotNetProjectFile.Diagnostics { }
-
-namespace DotNetProjectFile.EditorConfig { }
-
-namespace DotNetProjectFile.Git { }
-
-namespace DotNetProjectFile.IO { }
-
-namespace DotNetProjectFile.Ini { }
-
-namespace DotNetProjectFile.Licensing { }
-
-namespace DotNetProjectFile.MsBuild { }
-
-namespace DotNetProjectFile.MsBuild.CSharp { }
-
-namespace DotNetProjectFile.MsBuild.Conversion { }
-
-namespace DotNetProjectFile.MsBuild.VisualBasic { }
-
-namespace DotNetProjectFile.Navigation { }
-
-namespace DotNetProjectFile.NuGet { }
-
-namespace DotNetProjectFile.NuGet.Packaging { }
-
-namespace DotNetProjectFile.Parsing { }
-
-namespace DotNetProjectFile.Parsing.Internal { }
-
-namespace DotNetProjectFile.Resx { }
-
-namespace DotNetProjectFile.Slnx { }
-
-namespace DotNetProjectFile.Syntax { }
-
-namespace DotNetProjectFile.Text { }
-
-namespace DotNetProjectFile.Text.Globbing { }
-
-namespace DotNetProjectFile.Xml { }
-
 namespace Emik { }
-
-namespace Emik.Morsels { }
 
 namespace FxResources { }
 
 namespace FxResources.Microsoft { }
 
+namespace FxResources.Microsoft.Bcl { }
+
+namespace FxResources.Microsoft.Bcl.Memory { }
+
 namespace FxResources.Microsoft.Extensions { }
+
+namespace FxResources.Microsoft.Extensions.Configuration { }
+
+namespace FxResources.Microsoft.Extensions.Configuration.Abstractions { }
+
+namespace FxResources.Microsoft.Extensions.DependencyInjection { }
+
+namespace FxResources.Microsoft.Extensions.DependencyInjection.Abstractions { }
 
 namespace FxResources.Microsoft.Extensions.Logging { }
 
 namespace FxResources.Microsoft.Extensions.Logging.Abstractions { }
 
+namespace FxResources.Microsoft.Extensions.Options { }
+
+namespace FxResources.Microsoft.Extensions.Primitives { }
+
+namespace FxResources.Microsoft.Win32 { }
+
+namespace FxResources.Microsoft.Win32.SystemEvents { }
+
 namespace FxResources.System { }
-
-namespace FxResources.System.Collections { }
-
-namespace FxResources.System.Collections.Immutable { }
-
-namespace FxResources.System.Composition { }
-
-namespace FxResources.System.Composition.Convention { }
-
-namespace FxResources.System.Composition.Hosting { }
-
-namespace FxResources.System.Composition.Runtime { }
-
-namespace FxResources.System.Composition.TypedParts { }
 
 namespace FxResources.System.Configuration { }
 
 namespace FxResources.System.Configuration.ConfigurationManager { }
 
-namespace FxResources.System.IO { }
+namespace FxResources.System.Diagnostics { }
 
-namespace FxResources.System.IO.Pipelines { }
+namespace FxResources.System.Diagnostics.DiagnosticSource { }
 
-namespace FxResources.System.Reflection { }
+namespace FxResources.System.Drawing { }
 
-namespace FxResources.System.Reflection.Metadata { }
+namespace FxResources.System.Drawing.Common { }
 
 namespace FxResources.System.Security { }
 
@@ -1448,29 +1163,9 @@ namespace FxResources.System.Security.Cryptography.ProtectedData { }
 
 namespace FxResources.System.Security.Permissions { }
 
-namespace FxResources.System.Text { }
-
-namespace FxResources.System.Text.Encoding { }
-
-namespace FxResources.System.Text.Encoding.CodePages { }
-
-namespace FxResources.System.Threading { }
-
-namespace FxResources.System.Threading.Channels { }
-
 namespace FxResources.System.Windows { }
 
 namespace FxResources.System.Windows.Extensions { }
-
-namespace Grammr { }
-
-namespace Grammr.Lexers { }
-
-namespace Grammr.Parsers { }
-
-namespace Grammr.Syntax { }
-
-namespace Grammr.Text { }
 
 namespace Harmony { }
 
@@ -1521,6 +1216,28 @@ namespace Iced.Intel.NasmFormatterInternal { }
 namespace Il2Cpp { }
 
 namespace Il2CppAOT { }
+
+namespace Il2CppAdvBuffData { }
+
+namespace Il2CppAlmanacData { }
+
+namespace Il2CppCysharp { }
+
+namespace Il2CppCysharp.Threading { }
+
+namespace Il2CppCysharp.Threading.Tasks { }
+
+namespace Il2CppCysharp.Threading.Tasks.CompilerServices { }
+
+namespace Il2CppCysharp.Threading.Tasks.Internal { }
+
+namespace Il2CppCysharp.Threading.Tasks.Triggers { }
+
+namespace Il2CppGameLevel { }
+
+namespace Il2CppGameLevel.EventNodes { }
+
+namespace Il2CppGameLevel.OnLine { }
 
 namespace Il2CppInternal { }
 
@@ -1638,11 +1355,149 @@ namespace Il2CppMono.Security.Cryptography { }
 
 namespace Il2CppMono.Xml { }
 
+namespace Il2CppPlantEvolution { }
+
+namespace Il2CppRhythmGame { }
+
+namespace Il2CppRhythmGameEditor { }
+
+namespace Il2CppSimpleFileBrowser { }
+
+namespace Il2CppSystem { }
+
+namespace Il2CppSystem.Buffers { }
+
+namespace Il2CppSystem.Buffers.Binary { }
+
+namespace Il2CppSystem.Buffers.Text { }
+
+namespace Il2CppSystem.CodeDom { }
+
+namespace Il2CppSystem.CodeDom.Compiler { }
+
+namespace Il2CppSystem.Collections { }
+
+namespace Il2CppSystem.Collections.Concurrent { }
+
+namespace Il2CppSystem.Collections.Generic { }
+
+namespace Il2CppSystem.Collections.ObjectModel { }
+
+namespace Il2CppSystem.Collections.Specialized { }
+
+namespace Il2CppSystem.ComponentModel { }
+
+namespace Il2CppSystem.ComponentModel.Design { }
+
+namespace Il2CppSystem.ComponentModel.Design.Serialization { }
+
+namespace Il2CppSystem.Configuration { }
+
+namespace Il2CppSystem.Configuration.Assemblies { }
+
+namespace Il2CppSystem.Diagnostics { }
+
+namespace Il2CppSystem.Diagnostics.CodeAnalysis { }
+
+namespace Il2CppSystem.Diagnostics.Contracts { }
+
+namespace Il2CppSystem.Diagnostics.Tracing { }
+
+namespace Il2CppSystem.Dynamic { }
+
+namespace Il2CppSystem.Dynamic.Utils { }
+
+namespace Il2CppSystem.Globalization { }
+
+namespace Il2CppSystem.IO { }
+
+namespace Il2CppSystem.IO.Enumeration { }
+
+namespace Il2CppSystem.Linq { }
+
+namespace Il2CppSystem.Linq.Expressions { }
+
+namespace Il2CppSystem.Linq.Expressions.Interpreter { }
+
+namespace Il2CppSystem.Net { }
+
+namespace Il2CppSystem.Net.Configuration { }
+
+namespace Il2CppSystem.Net.Sockets { }
+
+namespace Il2CppSystem.Numerics { }
+
+namespace Il2CppSystem.Numerics.Hashing { }
+
+namespace Il2CppSystem.Reflection { }
+
+namespace Il2CppSystem.Reflection.Emit { }
+
+namespace Il2CppSystem.Resources { }
+
+namespace Il2CppSystem.Runtime { }
+
+namespace Il2CppSystem.Runtime.CompilerServices { }
+
+namespace Il2CppSystem.Runtime.ConstrainedExecution { }
+
+namespace Il2CppSystem.Runtime.ExceptionServices { }
+
+namespace Il2CppSystem.Runtime.InteropServices { }
+
+namespace Il2CppSystem.Runtime.Remoting { }
+
+namespace Il2CppSystem.Runtime.Remoting.Activation { }
+
+namespace Il2CppSystem.Runtime.Remoting.Channels { }
+
+namespace Il2CppSystem.Runtime.Remoting.Contexts { }
+
+namespace Il2CppSystem.Runtime.Remoting.Lifetime { }
+
+namespace Il2CppSystem.Runtime.Remoting.Messaging { }
+
+namespace Il2CppSystem.Runtime.Remoting.Metadata { }
+
+namespace Il2CppSystem.Runtime.Remoting.Proxies { }
+
+namespace Il2CppSystem.Runtime.Remoting.Services { }
+
+namespace Il2CppSystem.Runtime.Serialization { }
+
+namespace Il2CppSystem.Runtime.Serialization.Formatters { }
+
+namespace Il2CppSystem.Runtime.Serialization.Formatters.Binary { }
+
+namespace Il2CppSystem.Runtime.Versioning { }
+
+namespace Il2CppSystem.Security { }
+
+namespace Il2CppSystem.Security.Cryptography { }
+
+namespace Il2CppSystem.Security.Cryptography.X509Certificates { }
+
+namespace Il2CppSystem.Security.Policy { }
+
+namespace Il2CppSystem.Security.Principal { }
+
+namespace Il2CppSystem.Text { }
+
+namespace Il2CppSystem.Text.RegularExpressions { }
+
+namespace Il2CppSystem.Threading { }
+
+namespace Il2CppSystem.Threading.Tasks { }
+
+namespace Il2CppSystem.Xml { }
+
 namespace Il2CppTMPro { }
 
 namespace Il2CppTMPro.SpriteAssetUtilities { }
 
 namespace Il2CppVarietyFX { }
+
+namespace Il2CppZenGarden { }
 
 namespace Il2Cppcom { }
 
@@ -1656,8 +1511,6 @@ namespace Il2Cppcom.cyborgAssets.internalIBPExample { }
 
 namespace InlineIL { }
 
-namespace InlineMethod { }
-
 namespace Internal { }
 
 namespace Internal.Cryptography { }
@@ -1668,8 +1521,6 @@ namespace JetBrains.Annotations { }
 
 namespace LZ4ps { }
 
-namespace LocalsInit { }
-
 namespace MelonLoader { }
 
 namespace MelonLoader.Assertions { }
@@ -1679,6 +1530,16 @@ namespace MelonLoader.Bootstrap { }
 namespace MelonLoader.CoreClrUtils { }
 
 namespace MelonLoader.Fixes { }
+
+namespace MelonLoader.Fixes.AsmResolver { }
+
+namespace MelonLoader.Fixes.Dotnet { }
+
+namespace MelonLoader.Fixes.Harmony { }
+
+namespace MelonLoader.Fixes.Il2CppInterop { }
+
+namespace MelonLoader.Fixes.MonoMod { }
 
 namespace MelonLoader.ICSharpCode { }
 
@@ -1730,6 +1591,8 @@ namespace MelonLoader.Preferences { }
 
 namespace MelonLoader.Preferences.IO { }
 
+namespace MelonLoader.Properties { }
+
 namespace MelonLoader.Resolver { }
 
 namespace MelonLoader.TinyJSON { }
@@ -1747,256 +1610,6 @@ namespace Microsoft.Cci { }
 namespace Microsoft.Cci.Pdb { }
 
 namespace Microsoft.CodeAnalysis { }
-
-namespace Microsoft.CodeAnalysis.AddImport { }
-
-namespace Microsoft.CodeAnalysis.CaseCorrection { }
-
-namespace Microsoft.CodeAnalysis.ChangeNamespace { }
-
-namespace Microsoft.CodeAnalysis.Classification { }
-
-namespace Microsoft.CodeAnalysis.Classification.Classifiers { }
-
-namespace Microsoft.CodeAnalysis.CodeActions { }
-
-namespace Microsoft.CodeAnalysis.CodeCleanup { }
-
-namespace Microsoft.CodeAnalysis.CodeCleanup.Providers { }
-
-namespace Microsoft.CodeAnalysis.CodeFixes { }
-
-namespace Microsoft.CodeAnalysis.CodeFixesAndRefactorings { }
-
-namespace Microsoft.CodeAnalysis.CodeGen { }
-
-namespace Microsoft.CodeAnalysis.CodeGeneration { }
-
-namespace Microsoft.CodeAnalysis.CodeRefactorings { }
-
-namespace Microsoft.CodeAnalysis.CodeStyle { }
-
-namespace Microsoft.CodeAnalysis.Collections { }
-
-namespace Microsoft.CodeAnalysis.Collections.Internal { }
-
-namespace Microsoft.CodeAnalysis.Debugging { }
-
-namespace Microsoft.CodeAnalysis.Diagnostics { }
-
-namespace Microsoft.CodeAnalysis.Diagnostics.Analyzers { }
-
-namespace Microsoft.CodeAnalysis.Diagnostics.Analyzers.NamingStyles { }
-
-namespace Microsoft.CodeAnalysis.Diagnostics.Telemetry { }
-
-namespace Microsoft.CodeAnalysis.Differencing { }
-
-namespace Microsoft.CodeAnalysis.Editing { }
-
-namespace Microsoft.CodeAnalysis.EditorConfig { }
-
-namespace Microsoft.CodeAnalysis.EditorConfig.Parsing { }
-
-namespace Microsoft.CodeAnalysis.EditorConfig.Parsing.NamingStyles { }
-
-namespace Microsoft.CodeAnalysis.EmbeddedLanguages { }
-
-namespace Microsoft.CodeAnalysis.EmbeddedLanguages.Common { }
-
-namespace Microsoft.CodeAnalysis.EmbeddedLanguages.VirtualChars { }
-
-namespace Microsoft.CodeAnalysis.Emit { }
-
-namespace Microsoft.CodeAnalysis.Emit.EditAndContinue { }
-
-namespace Microsoft.CodeAnalysis.Emit.NoPia { }
-
-namespace Microsoft.CodeAnalysis.ErrorLogger { }
-
-namespace Microsoft.CodeAnalysis.ErrorReporting { }
-
-namespace Microsoft.CodeAnalysis.Extensions { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.Pythia { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.Pythia.Api { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.UnitTesting { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.UnitTesting.Api { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.VSTypeScript { }
-
-namespace Microsoft.CodeAnalysis.ExternalAccess.VSTypeScript.Api { }
-
-namespace Microsoft.CodeAnalysis.ExtractMethod { }
-
-namespace Microsoft.CodeAnalysis.FindSymbols { }
-
-namespace Microsoft.CodeAnalysis.FindSymbols.FindReferences { }
-
-namespace Microsoft.CodeAnalysis.FindSymbols.Finders { }
-
-namespace Microsoft.CodeAnalysis.FindSymbols.SymbolTree { }
-
-namespace Microsoft.CodeAnalysis.FlowAnalysis { }
-
-namespace Microsoft.CodeAnalysis.FlowAnalysis.SymbolUsageAnalysis { }
-
-namespace Microsoft.CodeAnalysis.Formatting { }
-
-namespace Microsoft.CodeAnalysis.Formatting.Rules { }
-
-namespace Microsoft.CodeAnalysis.GeneratedCodeRecognition { }
-
-namespace Microsoft.CodeAnalysis.Host { }
-
-namespace Microsoft.CodeAnalysis.Host.Mef { }
-
-namespace Microsoft.CodeAnalysis.Indentation { }
-
-namespace Microsoft.CodeAnalysis.InitializeParameter { }
-
-namespace Microsoft.CodeAnalysis.Internal { }
-
-namespace Microsoft.CodeAnalysis.Internal.Log { }
-
-namespace Microsoft.CodeAnalysis.InternalUtilities { }
-
-namespace Microsoft.CodeAnalysis.Interop { }
-
-namespace Microsoft.CodeAnalysis.LanguageService { }
-
-namespace Microsoft.CodeAnalysis.LanguageService.TypeInferenceService { }
-
-namespace Microsoft.CodeAnalysis.MoveDeclarationNearReference { }
-
-namespace Microsoft.CodeAnalysis.NamingStyles { }
-
-namespace Microsoft.CodeAnalysis.Notification { }
-
-namespace Microsoft.CodeAnalysis.ObsoleteSymbol { }
-
-namespace Microsoft.CodeAnalysis.Operations { }
-
-namespace Microsoft.CodeAnalysis.Options { }
-
-namespace Microsoft.CodeAnalysis.OrganizeImports { }
-
-namespace Microsoft.CodeAnalysis.Packaging { }
-
-namespace Microsoft.CodeAnalysis.PatternMatching { }
-
-namespace Microsoft.CodeAnalysis.PooledObjects { }
-
-namespace Microsoft.CodeAnalysis.Precedence { }
-
-namespace Microsoft.CodeAnalysis.Progress { }
-
-namespace Microsoft.CodeAnalysis.ProjectSystem { }
-
-namespace Microsoft.CodeAnalysis.ReassignedVariable { }
-
-namespace Microsoft.CodeAnalysis.Recommendations { }
-
-namespace Microsoft.CodeAnalysis.Remote { }
-
-namespace Microsoft.CodeAnalysis.RemoveUnnecessaryImports { }
-
-namespace Microsoft.CodeAnalysis.Rename { }
-
-namespace Microsoft.CodeAnalysis.Rename.ConflictEngine { }
-
-namespace Microsoft.CodeAnalysis.ReplaceDiscardDeclarationsWithAssignments { }
-
-namespace Microsoft.CodeAnalysis.RuntimeMembers { }
-
-namespace Microsoft.CodeAnalysis.SQLite { }
-
-namespace Microsoft.CodeAnalysis.SQLite.Interop { }
-
-namespace Microsoft.CodeAnalysis.SQLite.v2 { }
-
-namespace Microsoft.CodeAnalysis.SQLite.v2.Interop { }
-
-namespace Microsoft.CodeAnalysis.SemanticModelReuse { }
-
-namespace Microsoft.CodeAnalysis.Serialization { }
-
-namespace Microsoft.CodeAnalysis.Shared { }
-
-namespace Microsoft.CodeAnalysis.Shared.CodeStyle { }
-
-namespace Microsoft.CodeAnalysis.Shared.Collections { }
-
-namespace Microsoft.CodeAnalysis.Shared.Extensions { }
-
-namespace Microsoft.CodeAnalysis.Shared.Extensions.ContextQuery { }
-
-namespace Microsoft.CodeAnalysis.Shared.Helpers { }
-
-namespace Microsoft.CodeAnalysis.Shared.Helpers.RemoveUnnecessaryImports { }
-
-namespace Microsoft.CodeAnalysis.Shared.Naming { }
-
-namespace Microsoft.CodeAnalysis.Shared.TestHooks { }
-
-namespace Microsoft.CodeAnalysis.Shared.Utilities { }
-
-namespace Microsoft.CodeAnalysis.Simplification { }
-
-namespace Microsoft.CodeAnalysis.Simplification.Simplifiers { }
-
-namespace Microsoft.CodeAnalysis.SolutionCrawler { }
-
-namespace Microsoft.CodeAnalysis.SourceGeneration { }
-
-namespace Microsoft.CodeAnalysis.SourceGeneratorTelemetry { }
-
-namespace Microsoft.CodeAnalysis.Storage { }
-
-namespace Microsoft.CodeAnalysis.SymbolDisplay { }
-
-namespace Microsoft.CodeAnalysis.SymbolSearch { }
-
-namespace Microsoft.CodeAnalysis.Symbols { }
-
-namespace Microsoft.CodeAnalysis.Syntax { }
-
-namespace Microsoft.CodeAnalysis.Syntax.InternalSyntax { }
-
-namespace Microsoft.CodeAnalysis.Tags { }
-
-namespace Microsoft.CodeAnalysis.TaskList { }
-
-namespace Microsoft.CodeAnalysis.Telemetry { }
-
-namespace Microsoft.CodeAnalysis.Text { }
-
-namespace Microsoft.CodeAnalysis.UnitTests { }
-
-namespace Microsoft.CodeAnalysis.Utilities { }
-
-namespace Microsoft.CodeAnalysis.VisualBasic { }
-
-namespace Microsoft.CodeAnalysis.VisualBasic.CodeGeneration { }
-
-namespace Microsoft.CodeAnalysis.VisualBasic.CodeStyle { }
-
-namespace Microsoft.CodeAnalysis.VisualBasic.Formatting { }
-
-namespace Microsoft.CodeAnalysis.VisualBasic.Simplification { }
-
-namespace Microsoft.CodeAnalysis.Workspaces { }
-
-namespace Microsoft.CodeAnalysis.Workspaces.Diagnostics { }
-
-namespace Microsoft.CodeAnalysis.Workspaces.ProjectSystem { }
-
-namespace Microsoft.DiaSymReader { }
 
 namespace Microsoft.Diagnostics { }
 
@@ -2046,9 +1659,11 @@ namespace Microsoft.Extensions.Configuration.Memory { }
 
 namespace Microsoft.Extensions.DependencyInjection { }
 
-namespace Microsoft.Extensions.DependencyInjection.Abstractions { }
-
 namespace Microsoft.Extensions.DependencyInjection.Extensions { }
+
+namespace Microsoft.Extensions.DependencyInjection.ServiceLookup { }
+
+namespace Microsoft.Extensions.FileProviders { }
 
 namespace Microsoft.Extensions.Internal { }
 
@@ -2150,16 +1765,6 @@ namespace NullGuard { }
 
 namespace NullGuard.CodeAnalysis { }
 
-namespace Roslyn { }
-
-namespace Roslyn.Utilities { }
-
-namespace Scifa { }
-
-namespace Scifa.CheckedExceptions { }
-
-namespace Scifa.CheckedExceptions.Attributes { }
-
 namespace Semver { }
 
 namespace SevenZip { }
@@ -2242,6 +1847,8 @@ namespace Unity.Mathematics { }
 
 namespace Unity.Mathematics.Geometry { }
 
+namespace Unity.MemoryProfiler { }
+
 namespace Unity.Profiling { }
 
 namespace Unity.Profiling.LowLevel { }
@@ -2263,6 +1870,16 @@ namespace Unity.SpriteShape.External.LibTessDotNet { }
 namespace Unity.TLS { }
 
 namespace Unity.TLS.LowLevel { }
+
+namespace Unity.VisualScripting { }
+
+namespace Unity.VisualScripting.AssemblyQualifiedNameParser { }
+
+namespace Unity.VisualScripting.FullSerializer { }
+
+namespace Unity.VisualScripting.FullSerializer.Internal { }
+
+namespace Unity.VisualScripting.FullSerializer.Internal.Converters { }
 
 namespace UnityEditor { }
 
@@ -2352,6 +1969,8 @@ namespace UnityEngine.LowLevel { }
 
 namespace UnityEngine.Lumin { }
 
+namespace UnityEngine.NVIDIA { }
+
 namespace UnityEngine.Networking { }
 
 namespace UnityEngine.Networking.PlayerConnection { }
@@ -2381,6 +2000,8 @@ namespace UnityEngine.Rendering.Universal.Internal { }
 namespace UnityEngine.Rendering.Universal.LibTessDotNet { }
 
 namespace UnityEngine.Rendering.Universal.UTess { }
+
+namespace UnityEngine.Rendering.VirtualTexturing { }
 
 namespace UnityEngine.SceneManagement { }
 

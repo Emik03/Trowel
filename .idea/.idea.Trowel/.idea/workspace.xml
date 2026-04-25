@@ -13,8 +13,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/62d38d6504de4738a86d95f847b12b8c2fc200/b5/b061750f/Vector3.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9997e2a242f743c2bf9b8226407ada2ae400/8d/273758ef/Input.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c76e99439b181b80cfff9484f22be3364354f428f98533faeb942c757a2f0/ReadOnlySpan.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/be216102a9b66134730c9edf7511802bf4de8463939f1384929344c079da51/ByReference.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4c76e99439b181b80cfff9484f22be3364354f428f98533faeb942c757a2f0/ReadOnlySpan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/be216102a9b66134730c9edf7511802bf4de8463939f1384929344c079da51/ByReference.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/Span.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/SplitSpan.Enumerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../Emik.Morsels/Compile/Source/References/Emik/Buffers/SplitSpan.cs" root0="FORCE_HIGHLIGHTING" />
@@ -52,7 +52,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "last_opened_file_path": "/home/emik/.dotnet/sdk/MSBuild.dll",
-    "settings.editor.selected.configurable": "editor.preferences.completion"
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#"
   }
 }]]></component>
   <component name="RunManager">

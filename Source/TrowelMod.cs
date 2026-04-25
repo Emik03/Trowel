@@ -1,6 +1,6 @@
 ﻿// SPDX-License-Identifier: MPL-2.0
 [assembly: CLSCompliant(true)]
-[assembly: MelonInfo(typeof(TrowelMod), nameof(Trowel), "0.1", nameof(Emik))]
+[assembly: MelonInfo(typeof(TrowelMod), nameof(Trowel), "3.6", nameof(Emik))]
 [assembly: MelonGame("LanPiaoPiao", "PlantsVsZombiesRH")]
 
 namespace Trowel;
@@ -67,6 +67,8 @@ public sealed class TrowelMod : MelonMod
 
     MelonPreferences_Entry<KeyCode[]> Odyssey { get; set; } = null!;
 
+    MelonPreferences_Entry<KeyCode[]> RhythmGame { get; set; } = null!;
+
     MelonPreferences_Entry<KeyCode[][]> Shift { get; set; } = null!;
 
     MelonPreferences_Entry<KeyCode[][]> Slots { get; set; } = null!;
@@ -91,12 +93,16 @@ public sealed class TrowelMod : MelonMod
         Cancel = category.CreateEntry<KeyCode[]>(nameof(Cancel), [Alpha5]);
         Shift = category.CreateEntry<KeyCode[][]>(nameof(Shift), [[LeftControl, LeftShift, Tab]]);
         Slots = category.CreateEntry<KeyCode[][]>(nameof(Slots), [[A], [S], [D], [F], [Z], [X], [C], [V]]);
+        RhythmGame = category.CreateEntry<KeyCode[]>(nameof(RhythmGame), [S, D, J, K]);
         OdysseyData = category.CreateEntry<int[]?[]>(nameof(OdysseyData), []);
+        category.CreateEntry("KeyCodes (ReadOnly)", Enum.GetValues<KeyCode>()).Value = Enum.GetValues<KeyCode>();
 
         Type[] allowMethodTypes = [typeof(int), typeof(int), typeof(bool)];
+        var noteKeybindMethod = typeof(Input).GetMethod(nameof(NoteTrack.Start), Flags, null, [], null);
         var putDownItemMethod = typeof(Mouse).GetMethod(nameof(Mouse.PutDownItem), Flags, null, [], null);
         var allowMethod = typeof(Screen).GetMethod(nameof(Screen.SetResolution), Flags, null, allowMethodTypes, null);
         var getKeyDownMethod = typeof(Input).GetMethod(nameof(Input.GetKeyDown), Flags, null, [typeof(KeyCode)], null);
+        HarmonyInstance.Patch(noteKeybindMethod, postfix: new(((Delegate)SetNote).Method));
         HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)InvokeOnPutDownItem).Method));
         HarmonyInstance.Patch(allowMethod, new(((Delegate)AllowResolutionToChange).Method));
         HarmonyInstance.Patch(getKeyDownMethod, new(((Delegate)IsReserved).Method));
@@ -137,6 +143,17 @@ public sealed class TrowelMod : MelonMod
 
     static void InvokeOnPutDownItem() => OnPutDownItem();
 
+    static void SetNote(NoteTrack __instance)
+    {
+        var keybinds = Melon<TrowelMod>.Instance.RhythmGame.Value;
+
+        if ((uint)__instance.trackIndex >= (uint)keybinds.Length)
+            return;
+
+        __instance.keyCode = keybinds[__instance.trackIndex];
+        __instance.GetComponentInChildren<TextMeshPro>().text = keybinds[__instance.trackIndex].ToString();
+    }
+
     static bool AllowResolutionToChange(int width, int height, bool fullscreen) =>
         Melon<TrowelMod>.Instance.AllowResolutionChanges.Value && (Disabled || Cards() is []);
 
@@ -150,6 +167,7 @@ public sealed class TrowelMod : MelonMod
     }
 
     static bool IsReserved(KeyCode key, ref bool __result) =>
+        RhythmGameManager.Instance ||
         Melon<TrowelMod>.Instance is var m && m._updating ||
         !IsAny(key, m.Cancel.Value, m.Odyssey.Value) && !IsAny(key, m.Shift.Value) && !IsAny(key, m.Slots.Value) ||
         (__result = false);

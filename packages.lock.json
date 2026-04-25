@@ -4,9 +4,9 @@
     "net6.0": {
       "Absence.Fody": {
         "type": "Direct",
-        "requested": "[2.0.10, )",
-        "resolved": "2.0.10",
-        "contentHash": "2KLFoerxZmndQnk0eChviplhYaViXuxho3rK5UzIY+Tdpsk72uOFoJV0+g0XELAAF2Kq48EgWf1/0iAIMs4rpg=="
+        "requested": "[2.0.11, )",
+        "resolved": "2.0.11",
+        "contentHash": "DoO21KRWNDlAt/amx2yD0Z1MAtpv5hC97EU2G9LEhptpgWsFedpBQuajvszRIMD2zIGXEzwSAkgAdvugjQdBoQ=="
       },
       "Collections.Analyzer": {
         "type": "Direct",
@@ -25,18 +25,15 @@
       },
       "Divorce.Fody": {
         "type": "Direct",
-        "requested": "[1.1.1, )",
-        "resolved": "1.1.1",
-        "contentHash": "FpZKfY6XUBD/dpL8iV/DOn9w+BTwPq2JVuKP0GdSck+TxrVEus00Jex2hyjW4uJqR1uqBHCMryNKZw+6KFCrZg==",
-        "dependencies": {
-          "Fody": "6.8.2"
-        }
+        "requested": "[1.1.2, )",
+        "resolved": "1.1.2",
+        "contentHash": "c0IPHVtr5T02Y+YRzGWLNPGyWTIgqzWHdUVgl2vle/SnO4ZPgmlhTke2GltgGuYwAmKFEA7SJlaeCWeZMqkdiA=="
       },
       "Emik.SourceGenerators.Choices": {
         "type": "Direct",
-        "requested": "[1.4.16, )",
-        "resolved": "1.4.16",
-        "contentHash": "NaVwiCfMYmLf5mUqDhgS08YtOShR2kYvRyPQOs5xlZsTrvDDrJc2OzUHRIrEVzUOa2AoPBHxmtUX9PWy72Nwlw=="
+        "requested": "[1.4.17, )",
+        "resolved": "1.4.17",
+        "contentHash": "TNcX2Q7AfIBgYj5/qvTYPK/ZZh90jU+uB0dobkGXXYFu3pNivYJR8PHMT2p7vSW7Y77R2W0WPO2Bsb5WyK0cAQ=="
       },
       "Emik.SourceGenerators.Implicit": {
         "type": "Direct",
@@ -119,9 +116,9 @@
       },
       "StaticLambda.Fody": {
         "type": "Direct",
-        "requested": "[1.1.0, )",
-        "resolved": "1.1.0",
-        "contentHash": "Znant6dbREKt0rn4WkP5Z96k2cIo/6AlctoYqmbem0NsM4rnFkaWBXN2spxX9LBGzRnvBA03pGYbpC9gfzqKKg=="
+        "requested": "[1.1.2, )",
+        "resolved": "1.1.2",
+        "contentHash": "M87LvfaVuG1xh1fDmta0jrvH/ama1rdCmnd+IKkZ6yXEiHikkZgsEwi9oQf9jx/25CP96LWnfEL2OJqRsAFkfQ=="
       },
       "System.Reflection.Emit": {
         "type": "Direct",
