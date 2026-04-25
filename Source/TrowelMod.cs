@@ -77,7 +77,8 @@ public sealed class TrowelMod : MelonMod
     // ReSharper restore NullableWarningSuppressionIsUsed
     public override void OnInitializeMelon()
     {
-        const BindingFlags Flags = BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly;
+        const BindingFlags Flags =
+            BindingFlags.Public | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly;
 
         var category = MelonPreferences.CreateCategory(nameof(Trowel));
 
@@ -98,11 +99,11 @@ public sealed class TrowelMod : MelonMod
         category.CreateEntry("KeyCodes (ReadOnly)", Enum.GetValues<KeyCode>()).Value = Enum.GetValues<KeyCode>();
 
         Type[] allowMethodTypes = [typeof(int), typeof(int), typeof(bool)];
-        var noteKeybindMethod = typeof(Input).GetMethod(nameof(NoteTrack.Start), Flags, null, [], null);
+        var noteKeybindMethod = typeof(NoteTrack).GetMethod(nameof(NoteTrack.Start), Flags, null, [], null);
         var putDownItemMethod = typeof(Mouse).GetMethod(nameof(Mouse.PutDownItem), Flags, null, [], null);
         var allowMethod = typeof(Screen).GetMethod(nameof(Screen.SetResolution), Flags, null, allowMethodTypes, null);
         var getKeyDownMethod = typeof(Input).GetMethod(nameof(Input.GetKeyDown), Flags, null, [typeof(KeyCode)], null);
-        HarmonyInstance.Patch(noteKeybindMethod, postfix: new(((Delegate)SetNote).Method));
+        HarmonyInstance.Patch(noteKeybindMethod, postfix: new(((Delegate)UpdateKeybind).Method));
         HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)InvokeOnPutDownItem).Method));
         HarmonyInstance.Patch(allowMethod, new(((Delegate)AllowResolutionToChange).Method));
         HarmonyInstance.Patch(getKeyDownMethod, new(((Delegate)IsReserved).Method));
@@ -143,11 +144,12 @@ public sealed class TrowelMod : MelonMod
 
     static void InvokeOnPutDownItem() => OnPutDownItem();
 
-    static void SetNote(NoteTrack __instance)
+    static void UpdateKeybind(NoteTrack __instance)
     {
         var keybinds = Melon<TrowelMod>.Instance.RhythmGame.Value;
+        var index = __instance.trackIndex;
 
-        if ((uint)__instance.trackIndex >= (uint)keybinds.Length)
+        if ((uint)index >= (uint)keybinds.Length || keybinds[index] is var key && key == __instance.keyCode)
             return;
 
         __instance.keyCode = keybinds[__instance.trackIndex];
