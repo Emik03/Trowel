@@ -61,6 +61,8 @@ public sealed class TrowelMod : MelonMod
 
     MelonPreferences_Entry<int> MinimalSeedDurability { get; set; } = null!;
 
+    MelonPreferences_Entry<float> ScrollSpeed { get; set; } = null!;
+
     MelonPreferences_Entry<int[]?[]> OdysseyData { get; set; } = null!;
 
     MelonPreferences_Entry<KeyCode[]> Cancel { get; set; } = null!;
@@ -88,6 +90,7 @@ public sealed class TrowelMod : MelonMod
         EnableMouseScroll = category.CreateEntry(nameof(EnableMouseScroll), true);
         InvertMouseScroll = category.CreateEntry(nameof(InvertMouseScroll), false);
         MinimalSeedDurability = category.CreateEntry(nameof(MinimalSeedDurability), 0);
+        ScrollSpeed = category.CreateEntry(nameof(ScrollSpeed), 13f);
         WrapSeeds = category.CreateEntry(nameof(WrapSeeds), false);
 
         Odyssey = category.CreateEntry<KeyCode[]>(nameof(Odyssey), [O]);
@@ -101,10 +104,12 @@ public sealed class TrowelMod : MelonMod
         Type[] allowMethodTypes = [typeof(int), typeof(int), typeof(bool)];
         var noteKeybindMethod = typeof(NoteTrack).GetMethod(nameof(NoteTrack.Start), Flags, null, [], null);
         var putDownItemMethod = typeof(Mouse).GetMethod(nameof(Mouse.PutDownItem), Flags, null, [], null);
+        var noteMethod = typeof(FallingNote).GetMethod(nameof(FallingNote.Update), Flags, null, [], null);
         var allowMethod = typeof(Screen).GetMethod(nameof(Screen.SetResolution), Flags, null, allowMethodTypes, null);
         var getKeyDownMethod = typeof(Input).GetMethod(nameof(Input.GetKeyDown), Flags, null, [typeof(KeyCode)], null);
         HarmonyInstance.Patch(noteKeybindMethod, postfix: new(((Delegate)UpdateKeybind).Method));
         HarmonyInstance.Patch(putDownItemMethod, new(((Delegate)InvokeOnPutDownItem).Method));
+        HarmonyInstance.Patch(noteMethod, postfix: new(((Delegate)SetScrollSpeed).Method));
         HarmonyInstance.Patch(allowMethod, new(((Delegate)AllowResolutionToChange).Method));
         HarmonyInstance.Patch(getKeyDownMethod, new(((Delegate)IsReserved).Method));
 
@@ -143,6 +148,9 @@ public sealed class TrowelMod : MelonMod
     }
 
     static void InvokeOnPutDownItem() => OnPutDownItem();
+
+    static void SetScrollSpeed(FallingNote __instance) =>
+        __instance.fallSpeed = Melon<TrowelMod>.Instance.ScrollSpeed.Value;
 
     static void UpdateKeybind(NoteTrack __instance)
     {
