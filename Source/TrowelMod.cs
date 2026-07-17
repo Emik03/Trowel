@@ -382,7 +382,8 @@ public sealed class TrowelMod : MelonMod
 
     void SetSeedGroup()
     {
-        if (InGameUI.Instance is var ui && !ui ||
+        if (!WrapSeeds.Value ||
+            InGameUI.Instance is var ui && !ui ||
             ui.SeedBank is var bank && !bank ||
             bank.transform.Find("SeedGroup") is var seedGroup && !seedGroup ||
             seedGroup.GetComponent<GridLayoutGroup>() is var grid && !grid)

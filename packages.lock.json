@@ -116,9 +116,9 @@
       },
       "StaticLambda.Fody": {
         "type": "Direct",
-        "requested": "[1.1.3, )",
-        "resolved": "1.1.3",
-        "contentHash": "Q1aj/jsDoHqz3hkXdex/bnrjV2wEP19Dxj+fgh0C+u0N0Ace8JC6a5xppW72NouwiukQmUE2iLCfINWYtdK+Mw=="
+        "requested": "[1.1.4, )",
+        "resolved": "1.1.4",
+        "contentHash": "hx+Lnjffz+Lv3GYNMLn31CBWQr5CxyRpgEBnVqfKWspmHBbRLXkkTk9KGVyYe3LwAOhoiFrzWv6Rbub50WgR4g=="
       },
       "System.Reflection.Emit": {
         "type": "Direct",
