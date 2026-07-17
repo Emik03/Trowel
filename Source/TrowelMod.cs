@@ -122,7 +122,7 @@ public sealed class TrowelMod : MelonMod
     /// <inheritdoc />
     public override void OnUpdate()
     {
-        using var lifetime = new Lifetime(out _updating);
+        using Lifetime _ = new(out _updating);
         SetOdysseyState();
         SetSeedGroup();
 

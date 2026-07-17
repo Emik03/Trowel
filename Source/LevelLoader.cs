@@ -4,6 +4,10 @@ namespace Trowel;
 /// <summary>Travels to a specific level.</summary>
 public static class Go
 {
+    /// <inheritdoc cref="To(AdvantureLevel)"/>
+    [CLSCompliant(false)]
+    public static void To(AbyssLevel level) => To(LevelType.AbyssRealm, (int)level);
+
     /// <summary>Enters the level.</summary>
     /// <param name="level">The level to enter.</param>
     [CLSCompliant(false)]

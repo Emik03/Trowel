@@ -8,21 +8,20 @@ namespace Trowel;
 public readonly struct TravelSpans(TravelData data)
 {
     /// <summary>Gets the maximum length.</summary>
-    public static int Length => 9;
+    public static int Length => 8;
 
     /// <inheritdoc cref="IList.this[int]"/>
     public Span<int> this[int index] =>
         index switch
         {
             0 => Span(data.advBuffs),
-            1 => Span(data.advBuffs_lv2),
-            2 => Span(data.investBuffs),
-            3 => Span(data.investmentBuffs),
-            4 => Span(data.travelDebuffs),
-            5 => Span(data.ultiBuffs),
-            6 => Span(data.ultiBuffs_lv2),
-            7 => Span(data.unlockedPlants),
-            8 => Span(data.unlockedWeaks),
+            1 => Span(data.investBuffs),
+            2 => Span(data.investmentBuffs),
+            3 => Span(data.travelDebuffs),
+            4 => Span(data.ultiBuffs),
+            5 => Span(data.ultiBuffs_lv2),
+            6 => Span(data.unlockedPlants),
+            7 => Span(data.unlockedWeaks),
             _ => default,
         };
 

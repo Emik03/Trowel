@@ -45,8 +45,6 @@ global using global::System.Drawing.Configuration;
 global using global::System.Drawing.Design;
 global using global::System.Drawing.Drawing2D;
 global using global::System.Drawing.Imaging;
-global using global::System.Drawing.Internal;
-global using global::System.Drawing.Interop;
 global using global::System.Drawing.Printing;
 global using global::System.Drawing.Text;
 global using global::System.Dynamic;
@@ -136,11 +134,8 @@ global using global::System.Timers;
 global using global::System.Transactions;
 global using global::System.Web;
 global using global::System.Windows;
-global using global::System.Windows.Forms;
 global using global::System.Windows.Input;
 global using global::System.Windows.Markup;
-global using global::System.Xaml;
-global using global::System.Xaml.Permissions;
 global using global::System.Xml;
 global using global::System.Xml.Linq;
 global using global::System.Xml.Resolvers;
@@ -201,8 +196,6 @@ global using global::AsmResolver.Shims;
 global using global::AssetRipper;
 global using global::AssetRipper.Primitives;
 global using global::AssetRipper.Primitives.Extensions;
-global using global::AssetRipper.VersionUtilities;
-global using global::AssetRipper.VersionUtilities.Extensions;
 global using global::AssetsTools;
 global using global::AssetsTools.NET;
 global using global::AssetsTools.NET.Extra;
@@ -235,21 +228,15 @@ global using global::FxResources.Microsoft.Extensions.Logging;
 global using global::FxResources.Microsoft.Extensions.Logging.Abstractions;
 global using global::FxResources.Microsoft.Extensions.Options;
 global using global::FxResources.Microsoft.Extensions.Primitives;
-global using global::FxResources.Microsoft.Win32;
-global using global::FxResources.Microsoft.Win32.SystemEvents;
 global using global::FxResources.System;
 global using global::FxResources.System.Configuration;
 global using global::FxResources.System.Configuration.ConfigurationManager;
 global using global::FxResources.System.Diagnostics;
 global using global::FxResources.System.Diagnostics.DiagnosticSource;
-global using global::FxResources.System.Drawing;
-global using global::FxResources.System.Drawing.Common;
 global using global::FxResources.System.Security;
 global using global::FxResources.System.Security.Cryptography;
 global using global::FxResources.System.Security.Cryptography.ProtectedData;
 global using global::FxResources.System.Security.Permissions;
-global using global::FxResources.System.Windows;
-global using global::FxResources.System.Windows.Extensions;
 global using global::Harmony;
 global using global::HarmonyLib;
 global using global::HarmonyLib.Internal;
@@ -277,6 +264,8 @@ global using global::Il2Cpp;
 global using global::Il2CppAOT;
 global using global::Il2CppAdvBuffData;
 global using global::Il2CppAlmanacData;
+global using global::Il2CppAutoChess;
+global using global::Il2CppCore;
 global using global::Il2CppCysharp;
 global using global::Il2CppCysharp.Threading;
 global using global::Il2CppCysharp.Threading.Tasks;
@@ -284,8 +273,12 @@ global using global::Il2CppCysharp.Threading.Tasks.CompilerServices;
 global using global::Il2CppCysharp.Threading.Tasks.Internal;
 global using global::Il2CppCysharp.Threading.Tasks.Triggers;
 global using global::Il2CppGameLevel;
+global using global::Il2CppGameLevel.Abyss;
 global using global::Il2CppGameLevel.EventNodes;
 global using global::Il2CppGameLevel.OnLine;
+global using global::Il2CppGameLevel.RogueShooting;
+global using global::Il2CppGameLevel.Scene;
+global using global::Il2CppHuaLun;
 global using global::Il2CppInternal;
 global using global::Il2CppInternal.Cryptography;
 global using global::Il2CppInternal.Runtime;
@@ -344,12 +337,21 @@ global using global::Il2CppMono.Interop;
 global using global::Il2CppMono.Security;
 global using global::Il2CppMono.Security.Cryptography;
 global using global::Il2CppMono.Xml;
+global using global::Il2CppNewTravel;
+global using global::Il2CppPVPScaryPot;
+global using global::Il2CppPlaceRule;
 global using global::Il2CppPlantEvolution;
 global using global::Il2CppRhythmGame;
 global using global::Il2CppRhythmGameEditor;
+global using global::Il2CppSharpJson;
 global using global::Il2CppSimpleFileBrowser;
+global using global::Il2CppSpine;
+global using global::Il2CppSpine.Unity;
+global using global::Il2CppSpine.Unity.AnimationTools;
+global using global::Il2CppSpine.Unity.AttachmentTools;
 global using global::Il2CppTMPro;
 global using global::Il2CppTMPro.SpriteAssetUtilities;
+global using global::Il2CppUI;
 global using global::Il2CppVarietyFX;
 global using global::Il2CppZenGarden;
 global using global::Il2Cppcom;
@@ -429,7 +431,6 @@ global using global::Microsoft.Diagnostics.Runtime.Utilities;
 global using global::Microsoft.Diagnostics.Runtime.Windows;
 global using global::Microsoft.Extensions;
 global using global::Microsoft.Extensions.Configuration;
-global using global::Microsoft.Extensions.Configuration.Binder;
 global using global::Microsoft.Extensions.Configuration.Memory;
 global using global::Microsoft.Extensions.DependencyInjection;
 global using global::Microsoft.Extensions.DependencyInjection.Extensions;
@@ -587,7 +588,6 @@ global using global::UnityEngine.Internal;
 global using global::UnityEngine.Jobs;
 global using global::UnityEngine.LowLevel;
 global using global::UnityEngine.Lumin;
-global using global::UnityEngine.NVIDIA;
 global using global::UnityEngine.Networking;
 global using global::UnityEngine.Networking.PlayerConnection;
 global using global::UnityEngine.ParticleSystemJobs;
@@ -603,7 +603,6 @@ global using global::UnityEngine.Rendering.Universal;
 global using global::UnityEngine.Rendering.Universal.Internal;
 global using global::UnityEngine.Rendering.Universal.LibTessDotNet;
 global using global::UnityEngine.Rendering.Universal.UTess;
-global using global::UnityEngine.Rendering.VirtualTexturing;
 global using global::UnityEngine.SceneManagement;
 global using global::UnityEngine.Scripting;
 global using global::UnityEngine.Scripting.APIUpdating;
@@ -756,10 +755,6 @@ namespace System.Drawing.Design { }
 namespace System.Drawing.Drawing2D { }
 
 namespace System.Drawing.Imaging { }
-
-namespace System.Drawing.Internal { }
-
-namespace System.Drawing.Interop { }
 
 namespace System.Drawing.Printing { }
 
@@ -939,15 +934,9 @@ namespace System.Web { }
 
 namespace System.Windows { }
 
-namespace System.Windows.Forms { }
-
 namespace System.Windows.Input { }
 
 namespace System.Windows.Markup { }
-
-namespace System.Xaml { }
-
-namespace System.Xaml.Permissions { }
 
 namespace System.Xml { }
 
@@ -1069,10 +1058,6 @@ namespace AssetRipper.Primitives { }
 
 namespace AssetRipper.Primitives.Extensions { }
 
-namespace AssetRipper.VersionUtilities { }
-
-namespace AssetRipper.VersionUtilities.Extensions { }
-
 namespace AssetsTools { }
 
 namespace AssetsTools.NET { }
@@ -1137,10 +1122,6 @@ namespace FxResources.Microsoft.Extensions.Options { }
 
 namespace FxResources.Microsoft.Extensions.Primitives { }
 
-namespace FxResources.Microsoft.Win32 { }
-
-namespace FxResources.Microsoft.Win32.SystemEvents { }
-
 namespace FxResources.System { }
 
 namespace FxResources.System.Configuration { }
@@ -1151,10 +1132,6 @@ namespace FxResources.System.Diagnostics { }
 
 namespace FxResources.System.Diagnostics.DiagnosticSource { }
 
-namespace FxResources.System.Drawing { }
-
-namespace FxResources.System.Drawing.Common { }
-
 namespace FxResources.System.Security { }
 
 namespace FxResources.System.Security.Cryptography { }
@@ -1162,10 +1139,6 @@ namespace FxResources.System.Security.Cryptography { }
 namespace FxResources.System.Security.Cryptography.ProtectedData { }
 
 namespace FxResources.System.Security.Permissions { }
-
-namespace FxResources.System.Windows { }
-
-namespace FxResources.System.Windows.Extensions { }
 
 namespace Harmony { }
 
@@ -1221,6 +1194,10 @@ namespace Il2CppAdvBuffData { }
 
 namespace Il2CppAlmanacData { }
 
+namespace Il2CppAutoChess { }
+
+namespace Il2CppCore { }
+
 namespace Il2CppCysharp { }
 
 namespace Il2CppCysharp.Threading { }
@@ -1235,9 +1212,17 @@ namespace Il2CppCysharp.Threading.Tasks.Triggers { }
 
 namespace Il2CppGameLevel { }
 
+namespace Il2CppGameLevel.Abyss { }
+
 namespace Il2CppGameLevel.EventNodes { }
 
 namespace Il2CppGameLevel.OnLine { }
+
+namespace Il2CppGameLevel.RogueShooting { }
+
+namespace Il2CppGameLevel.Scene { }
+
+namespace Il2CppHuaLun { }
 
 namespace Il2CppInternal { }
 
@@ -1355,13 +1340,29 @@ namespace Il2CppMono.Security.Cryptography { }
 
 namespace Il2CppMono.Xml { }
 
+namespace Il2CppNewTravel { }
+
+namespace Il2CppPVPScaryPot { }
+
+namespace Il2CppPlaceRule { }
+
 namespace Il2CppPlantEvolution { }
 
 namespace Il2CppRhythmGame { }
 
 namespace Il2CppRhythmGameEditor { }
 
+namespace Il2CppSharpJson { }
+
 namespace Il2CppSimpleFileBrowser { }
+
+namespace Il2CppSpine { }
+
+namespace Il2CppSpine.Unity { }
+
+namespace Il2CppSpine.Unity.AnimationTools { }
+
+namespace Il2CppSpine.Unity.AttachmentTools { }
 
 namespace Il2CppSystem { }
 
@@ -1494,6 +1495,8 @@ namespace Il2CppSystem.Xml { }
 namespace Il2CppTMPro { }
 
 namespace Il2CppTMPro.SpriteAssetUtilities { }
+
+namespace Il2CppUI { }
 
 namespace Il2CppVarietyFX { }
 
@@ -1652,8 +1655,6 @@ namespace Microsoft.Diagnostics.Runtime.Windows { }
 namespace Microsoft.Extensions { }
 
 namespace Microsoft.Extensions.Configuration { }
-
-namespace Microsoft.Extensions.Configuration.Binder { }
 
 namespace Microsoft.Extensions.Configuration.Memory { }
 
@@ -1969,8 +1970,6 @@ namespace UnityEngine.LowLevel { }
 
 namespace UnityEngine.Lumin { }
 
-namespace UnityEngine.NVIDIA { }
-
 namespace UnityEngine.Networking { }
 
 namespace UnityEngine.Networking.PlayerConnection { }
@@ -2000,8 +1999,6 @@ namespace UnityEngine.Rendering.Universal.Internal { }
 namespace UnityEngine.Rendering.Universal.LibTessDotNet { }
 
 namespace UnityEngine.Rendering.Universal.UTess { }
-
-namespace UnityEngine.Rendering.VirtualTexturing { }
 
 namespace UnityEngine.SceneManagement { }
 

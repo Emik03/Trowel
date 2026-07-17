@@ -10,9 +10,9 @@
       },
       "Collections.Analyzer": {
         "type": "Direct",
-        "requested": "[0.2.14.1, )",
-        "resolved": "0.2.14.1",
-        "contentHash": "D/PGOXrvNPcDITDd8jDF9akeY6TeTvVehG+y13Zm9h9HY+fN/uLHcbcoJiBdi4HmCzV7WivTkaXBQ9OZqXlrjQ=="
+        "requested": "[0.2.14.2, )",
+        "resolved": "0.2.14.2",
+        "contentHash": "FCQXj050exC2BDv7/yq/ECQReT62/nU19ZX08eLGO1RCEg31Uf760nz5mQBb9nSM4mqkVnkVHA7XtBEZEUIzFA=="
       },
       "CommunityToolkit.HighPerformance": {
         "type": "Direct",
@@ -79,9 +79,9 @@
       },
       "JetBrains.Annotations": {
         "type": "Direct",
-        "requested": "[2025.2.4, )",
-        "resolved": "2025.2.4",
-        "contentHash": "TwbgxAkXxY+vNEhNVx/QXjJ4vqxmepOjsgRvvImQPbHkHMMb4W+ahL3laMsxXKtNT7iMy+E1B3xkqao2hf1n3A=="
+        "requested": "[2026.2.0, )",
+        "resolved": "2026.2.0",
+        "contentHash": "drvAEaI7Xf4wU6dx4UTB9MoZWXZlraaQ0qoeThPQ411FxNhId7QdUTukIC9I8aUHP0ycAaGwZNKqSvfOZQvUlg=="
       },
       "JetBrainsAnnotations.Fody": {
         "type": "Direct",
@@ -95,9 +95,9 @@
       },
       "Microsoft.CodeAnalysis.Analyzers": {
         "type": "Direct",
-        "requested": "[5.3.0, )",
-        "resolved": "5.3.0",
-        "contentHash": "KuLhbZwB0L8JikL86AE5VWEp3RLNjIcp+j8yz9EJ/UBgRz4+qDEjHg/tluRFbpYpD/e37BqaaNFbQ0vqawBwWQ=="
+        "requested": "[5.6.0, )",
+        "resolved": "5.6.0",
+        "contentHash": "30ffAcvc+M4xXFN06dg2bKyH5eXgJQmyuB5H5cpC47559rQV5x7vZRyyC/YakNLQtBG3IdW/ZAyLCMeDBGDxXg=="
       },
       "NullGuard.Fody": {
         "type": "Direct",
@@ -116,9 +116,9 @@
       },
       "StaticLambda.Fody": {
         "type": "Direct",
-        "requested": "[1.1.2, )",
-        "resolved": "1.1.2",
-        "contentHash": "M87LvfaVuG1xh1fDmta0jrvH/ama1rdCmnd+IKkZ6yXEiHikkZgsEwi9oQf9jx/25CP96LWnfEL2OJqRsAFkfQ=="
+        "requested": "[1.1.3, )",
+        "resolved": "1.1.3",
+        "contentHash": "Q1aj/jsDoHqz3hkXdex/bnrjV2wEP19Dxj+fgh0C+u0N0Ace8JC6a5xppW72NouwiukQmUE2iLCfINWYtdK+Mw=="
       },
       "System.Reflection.Emit": {
         "type": "Direct",
@@ -128,9 +128,9 @@
       },
       "Text.Analyzers": {
         "type": "Direct",
-        "requested": "[5.0.0-1.25277.114, )",
-        "resolved": "5.0.0-1.25277.114",
-        "contentHash": "nbYnMWteAF4lNvlqD24ejnmeEvmYW3tchdrymrhqhDbnsDqkUyg2N/uQY1FIyQNwLXX3eMwF7GQ+Z37rgtKxgw=="
+        "requested": "[5.6.0, )",
+        "resolved": "5.6.0",
+        "contentHash": "tDYK+kID75I18NAQhK4U+FolrlpeH4eiUg8d4H5GRbc3L5GMG0ltB7ioANCtuO8V4L7DL4U2bsG1B+zgbsXd/A=="
       },
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Transitive",
